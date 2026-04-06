@@ -21,19 +21,19 @@ export function Home() {
       id: "window-tint",
       title: "CERAMIC WINDOW TINT",
       description: "Advanced heat rejection and maximum privacy for the ultimate driving experience.",
-      image: "/images/tint.png",
+      image: "/images/tint.jpg",
     },
     {
       id: "vinyl-wrap",
       title: "PREMIUM VINYL WRAPS",
       description: "Complete color transformations and custom finishes with world-class materials.",
-      image: "/images/ppf.png",
+      image: "/images/ppf.jpg",
     },
     {
       id: "ceramic-coating",
       title: "CERAMIC PROTECTION",
       description: "High-gloss, hydrophobic barrier that protects your vehicle's finish for years.",
-      image: "/images/ceramic.png",
+      image: "/images/ceramic.jpg",
     },
   ];
 
@@ -43,7 +43,7 @@ export function Home() {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="/images/hero.png"
+            src="/images/hero.jpg"
             alt="Luxury vehicle"
             className="w-full h-full object-cover opacity-60 scale-105"
           />
@@ -234,11 +234,11 @@ export function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-1">
           {[
-            "/images/tint.png",
-            "/images/ppf.png",
-            "/images/ceramic.png",
-            "/images/hero.png",
-            "/images/tint.png"
+            "/images/tint.jpg",
+            "/images/ppf.jpg",
+            "/images/ceramic.jpg",
+            "/images/hero.jpg",
+            "/images/tint.jpg"
           ].map((img, i) => (
             <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden bg-zinc-950">
                <img src={img} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="Instagram" />
