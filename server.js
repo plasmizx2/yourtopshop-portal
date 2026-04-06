@@ -20,7 +20,11 @@ function sendIfExists(res, absolutePath, contentType) {
   try {
     if (!fs.existsSync(absolutePath)) return false;
     if (contentType) res.type(contentType);
-    res.sendFile(absolutePath);
+    res.sendFile(absolutePath, (err) => {
+      if (err) {
+        res.status(err.statusCode || 404).type('text/plain').send('Not found');
+      }
+    });
     return true;
   } catch {
     return false;
