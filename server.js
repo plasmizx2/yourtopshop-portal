@@ -153,7 +153,18 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {
-  res.json({ ok: true });
+  const distPath = path.join(__dirname, 'dist');
+  const publicPath = path.join(__dirname, 'public');
+  res.json({
+    ok: true,
+    commit: process.env.RENDER_GIT_COMMIT || null,
+    distExists: fs.existsSync(distPath),
+    publicExists: fs.existsSync(publicPath),
+    distSitemap: fs.existsSync(path.join(distPath, 'sitemap.xml')),
+    publicSitemap: fs.existsSync(path.join(publicPath, 'sitemap.xml')),
+    distHero: fs.existsSync(path.join(distPath, 'images', 'hero.jpg')),
+    publicHero: fs.existsSync(path.join(publicPath, 'images', 'hero.jpg')),
+  });
 });
 
 // ──────────────────────────────────────────────
