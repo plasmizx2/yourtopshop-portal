@@ -367,34 +367,39 @@ export function Admin() {
                   key={booking.id}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="p-6 hover:bg-zinc-950/50 transition-colors"
+                  className="p-6 hover:bg-zinc-950/80 transition-all border-b border-zinc-900 last:border-b-0 group"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex-1 space-y-2">
-                      <div className="flex items-center gap-3">
-                        <h3 className="text-sm font-black uppercase tracking-widest text-white">{booking.service}</h3>
-                        <span className={`px-2 py-0.5 text-[8px] font-black uppercase tracking-widest ${
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div className="flex-1 space-y-3">
+                      <div className="flex items-center gap-4">
+                        <h3 className="text-sm font-black uppercase tracking-widest text-white group-hover:text-yellow-400 transition-colors">{booking.service}</h3>
+                        <span className={`px-3 py-1 text-[8px] font-black uppercase tracking-[0.2em] ${
                           booking.paymentStatus === "paid"
-                            ? "bg-green-400/10 text-green-400 border border-green-400/20"
-                            : "bg-blue-400/10 text-blue-400 border border-blue-400/20"
+                            ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                            : booking.paymentStatus === "canceled"
+                            ? "bg-red-500/10 text-red-400 border border-red-500/20"
+                            : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
                         }`}>
                           {booking.paymentStatus}
                         </span>
                       </div>
-                      <div className="flex flex-wrap gap-4 text-[10px] text-zinc-500 font-medium uppercase tracking-widest">
-                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3 text-yellow-400" />{booking.date}</span>
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-yellow-400" />{booking.time}</span>
-                        <span className="flex items-center gap-1"><DollarSign className="w-3 h-3 text-yellow-400" />{booking.price}</span>
-                        <span className="flex items-center gap-1"><Mail className="w-3 h-3 text-yellow-400" />{booking.customerEmail}</span>
+                      <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+                        <span className="flex items-center gap-2 text-zinc-400"><Calendar className="w-3.5 h-3.5 text-yellow-500" />{booking.date}</span>
+                        <span className="flex items-center gap-2 text-zinc-400"><Clock className="w-3.5 h-3.5 text-yellow-500" />{booking.time}</span>
+                        <span className="flex items-center gap-2 text-white bg-zinc-900 px-2 py-0.5"><DollarSign className="w-3.5 h-3.5 text-yellow-500" />{booking.price}</span>
+                        <span className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-zinc-600" />{booking.customerEmail}</span>
                       </div>
                     </div>
-                    <div className="text-right flex flex-col items-end justify-between h-full">
-                      <p className="text-[9px] text-zinc-700 font-medium uppercase tracking-widest mb-4">
-                        {new Date(booking.createdAt).toLocaleDateString()} {new Date(booking.createdAt).toLocaleTimeString()}
+                    <div className="flex flex-col items-end gap-3">
+                      <p className="text-[9px] text-zinc-700 font-black uppercase tracking-widest">
+                        Ref: {booking.id.slice(-8).toUpperCase()} • {format(new Date(booking.createdAt), 'MMM do, HH:mm')}
                       </p>
                       {booking.paymentStatus !== "canceled" && (
-                        <button onClick={() => cancelBooking(booking.id)} className="text-[9px] font-black uppercase tracking-widest text-red-500 hover:text-red-400 border border-red-900/30 px-3 py-1 bg-red-500/10 transition-colors">
-                          Cancel
+                        <button 
+                          onClick={() => cancelBooking(booking.id)} 
+                          className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-500 hover:text-red-500 hover:border-red-500/50 border border-zinc-800 px-4 py-1.5 transition-all bg-black"
+                        >
+                          Cancel Appointment
                         </button>
                       )}
                     </div>
