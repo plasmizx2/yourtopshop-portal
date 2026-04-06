@@ -16,8 +16,7 @@ import {
 } from "lucide-react";
 
 export function Home() {
-  const brandHeroImage =
-    "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=2400&auto=format&fit=crop";
+  const brandHeroImage = "/images/hero.png";
 
   const featuredServices = [
     {

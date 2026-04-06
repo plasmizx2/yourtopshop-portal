@@ -55,7 +55,9 @@ bower_components
 jspm_packages
 
 # Images / Media
-public/images/*.png
-public/images/*.jpg
-public/favicon.png
-# (Keep these if you want them in the repo for the initial push)
+# NOTE: we commit production images for deployment.
+# If you prefer not to store large assets in git, revert these ignores and
+# host images via a CDN/S3 instead.
+# public/images/*.png
+# public/images/*.jpg
+# public/favicon.png
