@@ -126,7 +126,7 @@ export function Services() {
               <Link to="/contact">Contact Support</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-black px-12 py-8 text-lg rounded-none tracking-widest uppercase transition-colors">
-              <Link to="/gallery">View Detailed Work</Link>
+              <Link to="/contact">Request a Quote</Link>
             </Button>
           </div>
         </div>
