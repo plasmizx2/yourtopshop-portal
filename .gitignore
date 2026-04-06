@@ -1,0 +1,61 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Local databases (optional: ignore if you use a cloud DB)
+# bookings.json
+# blocked.json
+# quotes.json
+# inquiries.json
+
+# Build
+dist
+dist-ssr
+.parcel-cache
+.turbo
+.next
+.nuxt
+.svelte-kit
+.output
+.docusaurus
+.vercel
+.netlify
+.cache
+.npm
+.eslintcache
+.stylelintcache
+node_modules
+bower_components
+jspm_packages
+
+# Images / Media
+public/images/*.png
+public/images/*.jpg
+public/favicon.png
+# (Keep these if you want them in the repo for the initial push)
