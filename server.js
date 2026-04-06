@@ -393,7 +393,8 @@ if (!process.env.DEV) {
   const distPath = path.join(__dirname, 'dist');
   app.use(express.static(distPath));
   
-  app.get('/:path*', (req, res) => {
+  // Fallback catch-all for SPA routing (avoids wildcard regex issues)
+  app.use((req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
   });
 }
