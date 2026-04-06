@@ -16,6 +16,17 @@ const PORT = process.env.PORT || 3001;
 const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 const IS_DEV = process.env.DEV === 'true';
 
+function sendIfExists(res, absolutePath, contentType) {
+  try {
+    if (!fs.existsSync(absolutePath)) return false;
+    if (contentType) res.type(contentType);
+    res.sendFile(absolutePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 
 // Stripe init
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
@@ -138,6 +149,10 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), (req, res) =
 // Standard middleware (AFTER webhook route)
 app.use(cors());
 app.use(express.json());
+
+app.get('/api/health', (req, res) => {
+  res.json({ ok: true });
+});
 
 // ──────────────────────────────────────────────
 // API: Create Checkout Session
@@ -396,21 +411,28 @@ if (!IS_DEV) {
 
   // Explicitly serve SEO/static assets first so they never hit SPA routing.
   app.get('/robots.txt', (req, res) => {
-    res.sendFile(path.join(distPath, 'robots.txt'));
+    const fromDist = path.join(distPath, 'robots.txt');
+    const fromPublic = path.join(publicPath, 'robots.txt');
+    if (sendIfExists(res, fromDist, 'text/plain')) return;
+    if (sendIfExists(res, fromPublic, 'text/plain')) return;
+    res.status(404).type('text/plain').send('Not found');
   });
 
   app.get('/sitemap.xml', (req, res) => {
-    res.type('application/xml');
-    res.sendFile(path.join(distPath, 'sitemap.xml'));
+    const fromDist = path.join(distPath, 'sitemap.xml');
+    const fromPublic = path.join(publicPath, 'sitemap.xml');
+    if (sendIfExists(res, fromDist, 'application/xml')) return;
+    if (sendIfExists(res, fromPublic, 'application/xml')) return;
+    res.status(404).type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><error>Not found</error>');
   });
 
   // Serve any images placed in public/images (copied into dist/images at build time),
   // and also allow direct serving from public in case dist doesn't include them.
-  app.use('/images', express.static(path.join(distPath, 'images')));
-  app.use('/images', express.static(path.join(publicPath, 'images')));
+  app.use('/images', express.static(path.join(distPath, 'images'), { fallthrough: true }));
+  app.use('/images', express.static(path.join(publicPath, 'images'), { fallthrough: true }));
 
   // Serve the built app.
-  app.use(express.static(distPath));
+  app.use(express.static(distPath, { fallthrough: true }));
 
   // Fallback catch-all for SPA routing (avoids wildcard regex issues)
   app.use((req, res) => {
