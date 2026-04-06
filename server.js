@@ -13,14 +13,24 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
+
 
 // Stripe init
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2024-12-18.acacia',
 });
 
-// Bookings file path
-const BOOKINGS_FILE = path.join(__dirname, 'bookings.json');
+// Bookings file path (stored in /data for persistence)
+const DATA_DIR = path.join(__dirname, 'data');
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+const BOOKINGS_FILE = path.join(DATA_DIR, 'bookings.json');
+const BLOCKED_FILE = path.join(DATA_DIR, 'blocked.json');
+const QUOTES_FILE = path.join(DATA_DIR, 'quotes.json');
+const INQUIRIES_FILE = path.join(DATA_DIR, 'inquiries.json');
 
 // Helper: read bookings
 function readBookings() {
@@ -37,8 +47,6 @@ function writeBookings(bookings) {
   fs.writeFileSync(BOOKINGS_FILE, JSON.stringify(bookings, null, 2));
 }
 
-const BLOCKED_FILE = path.join(__dirname, 'blocked.json');
-
 function readBlocked() {
   try {
     const data = fs.readFileSync(BLOCKED_FILE, 'utf-8');
@@ -52,8 +60,6 @@ function writeBlocked(blocked) {
   fs.writeFileSync(BLOCKED_FILE, JSON.stringify(blocked, null, 2));
 }
 
-const QUOTES_FILE = path.join(__dirname, 'quotes.json');
-
 function readQuotes() {
   try {
     const data = fs.readFileSync(QUOTES_FILE, 'utf-8');
@@ -66,8 +72,6 @@ function readQuotes() {
 function writeQuotes(quotes) {
   fs.writeFileSync(QUOTES_FILE, JSON.stringify(quotes, null, 2));
 }
-
-const INQUIRIES_FILE = path.join(__dirname, 'inquiries.json');
 
 function readInquiries() {
   try {
@@ -188,7 +192,6 @@ app.post('/api/create-checkout-session', async (req, res) => {
 // ──────────────────────────────────────────────
 app.get('/api/bookings', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 
   if (pin !== ADMIN_PIN) {
     return res.status(401).json({ error: 'Unauthorized' });
@@ -250,7 +253,6 @@ app.get('/api/availability', (req, res) => {
 // ──────────────────────────────────────────────
 app.post('/api/admin/cancel-booking', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
 
@@ -269,7 +271,6 @@ app.post('/api/admin/cancel-booking', (req, res) => {
 
 app.post('/api/admin/blocks', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
 
@@ -288,7 +289,6 @@ app.post('/api/admin/blocks', (req, res) => {
 
 app.post('/api/admin/remove-block', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
 
@@ -307,7 +307,6 @@ app.post('/api/admin/remove-block', (req, res) => {
 
 app.get('/api/admin/blocks', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
   
@@ -332,7 +331,6 @@ app.post('/api/quotes', (req, res) => {
 
 app.get('/api/admin/quotes', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
   
   res.json(readQuotes().reverse());
@@ -340,7 +338,6 @@ app.get('/api/admin/quotes', (req, res) => {
 
 app.post('/api/admin/quotes/status', (req, res) => {
   const pin = req.headers['x-admin-pin'];
-  const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
   if (pin !== ADMIN_PIN) return res.status(401).json({ error: 'Unauthorized' });
 
   const { id, status } = req.body;
@@ -356,17 +353,8 @@ app.post('/api/admin/quotes/status', (req, res) => {
 });
 
 // ──────────────────────────────────────────────
-// Serve Vite build in production
+// API: inquiries
 // ──────────────────────────────────────────────
-const distPath = path.join(__dirname, 'dist');
-if (fs.existsSync(distPath)) {
-  app.use(express.static(distPath));
-  app.get('/{*path}', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
-}
-
-// ─── inquiries API ───
 app.post('/api/inquiries', (req, res) => {
   const inquiry = {
     id: 'inq_' + Date.now(),
