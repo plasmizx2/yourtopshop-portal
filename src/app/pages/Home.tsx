@@ -142,18 +142,18 @@ export function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="aspect-square bg-zinc-900 border border-gray-800 overflow-hidden group">
-                   <img src="/images/real/gallery-shop-01.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="In-shop project" />
+                   <img src="/images/real-optimized/gallery-shop-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="In-shop project" />
                 </div>
                 <div className="aspect-[3/4] bg-zinc-900 border border-gray-800 overflow-hidden group">
-                   <img src="/images/real/gallery-wrap-01.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Wrap installation" />
+                   <img src="/images/real-optimized/gallery-wrap-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Wrap installation" />
                 </div>
               </div>
               <div className="space-y-4 pt-12">
                 <div className="aspect-[3/4] bg-zinc-900 border border-gray-800 overflow-hidden group">
-                   <img src="/images/real/gallery-detail-02.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Finished detailing" />
+                   <img src="/images/real-optimized/gallery-detail-02.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Finished detailing" />
                 </div>
                 <div className="aspect-square bg-zinc-900 border border-gray-800 overflow-hidden group">
-                   <img src="/images/real/gallery-detail-01.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Detailing prep" />
+                   <img src="/images/real-optimized/gallery-detail-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Detailing prep" />
                 </div>
               </div>
             </div>
