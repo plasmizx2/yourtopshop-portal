@@ -16,19 +16,15 @@ const PORT = process.env.PORT || 3001;
 const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
 const IS_DEV = process.env.DEV === 'true';
 
-function sendIfExists(res, absolutePath, contentType) {
-  try {
-    if (!fs.existsSync(absolutePath)) return false;
-    if (contentType) res.type(contentType);
-    res.sendFile(absolutePath, (err) => {
-      if (err) {
-        res.status(err.statusCode || 404).type('text/plain').send('Not found');
-      }
-    });
-    return true;
-  } catch {
-    return false;
-  }
+function safeSendFile(res, absolutePath, contentType) {
+  if (!fs.existsSync(absolutePath)) return false;
+  if (contentType) res.type(contentType);
+  res.sendFile(absolutePath, (err) => {
+    if (!err) return;
+    if (res.headersSent) return;
+    res.status(404).type('text/plain').send('Not found');
+  });
+  return true;
 }
 
 
@@ -417,17 +413,27 @@ if (!IS_DEV) {
   app.get('/robots.txt', (req, res) => {
     const fromDist = path.join(distPath, 'robots.txt');
     const fromPublic = path.join(publicPath, 'robots.txt');
-    if (sendIfExists(res, fromDist, 'text/plain')) return;
-    if (sendIfExists(res, fromPublic, 'text/plain')) return;
+    if (safeSendFile(res, fromDist, 'text/plain')) return;
+    if (safeSendFile(res, fromPublic, 'text/plain')) return;
     res.status(404).type('text/plain').send('Not found');
   });
 
   app.get('/sitemap.xml', (req, res) => {
     const fromDist = path.join(distPath, 'sitemap.xml');
     const fromPublic = path.join(publicPath, 'sitemap.xml');
-    if (sendIfExists(res, fromDist, 'application/xml')) return;
-    if (sendIfExists(res, fromPublic, 'application/xml')) return;
+    if (safeSendFile(res, fromDist, 'application/xml')) return;
+    if (safeSendFile(res, fromPublic, 'application/xml')) return;
     res.status(404).type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><error>Not found</error>');
+  });
+
+  // Make /images/* never 500: serve from dist first, then public, else 404.
+  app.get('/images/:file', (req, res) => {
+    const file = req.params.file;
+    const fromDist = path.join(distPath, 'images', file);
+    const fromPublic = path.join(publicPath, 'images', file);
+    if (safeSendFile(res, fromDist)) return;
+    if (safeSendFile(res, fromPublic)) return;
+    res.status(404).type('text/plain').send('Not found');
   });
 
   // Serve any images placed in public/images (copied into dist/images at build time),
