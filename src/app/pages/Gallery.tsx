@@ -53,9 +53,39 @@ export function Gallery() {
       category: "wraps",
     },
     {
-      src: "/images/gallery_tesla.png",
+      src: "/images/real/gallery-shop-01.png",
       title: "Full Vehicle Restoration",
       category: "automotive",
+    },
+    {
+      src: "/images/real/gallery-shop-02.png",
+      title: "In-Shop Tint Install — Quality Control",
+      category: "automotive",
+    },
+    {
+      src: "/images/real/gallery-shop-03.png",
+      title: "Fresh Tint — Gloss Finish & Clean Lines",
+      category: "automotive",
+    },
+    {
+      src: "/images/real/gallery-wrap-01.png",
+      title: "Vinyl Wrap Install — Precision Application",
+      category: "wraps",
+    },
+    {
+      src: "/images/real/gallery-detail-01.png",
+      title: "Detailing — Foam Wash Prep",
+      category: "automotive",
+    },
+    {
+      src: "/images/real/gallery-detail-02.png",
+      title: "Detailing — Final Gloss Finish",
+      category: "automotive",
+    },
+    {
+      src: "/images/real/gallery-commercial-01.png",
+      title: "Commercial Wrap — Branded Fleet Work",
+      category: "commercial",
     },
   ];
 
