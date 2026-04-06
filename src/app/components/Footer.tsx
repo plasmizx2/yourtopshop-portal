@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
-  const logoSrc = "/images/brand/logo-wide.png";
+  const logoSrc = "/images/brand/logo-wide-cropped.png";
 
   return (
     <footer className="bg-black text-gray-400 border-t border-gray-800 font-light">
@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src={logoSrc}
                 alt="Your Top Shop"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(250,204,21,0.25)]"
               />
               <span className="text-yellow-400 font-bold tracking-widest uppercase">Premium Automotive Solutions</span>
             </div>

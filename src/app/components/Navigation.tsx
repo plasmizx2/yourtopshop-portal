@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const logoSrc = "/images/brand/logo-wide.png";
+  const logoSrc = "/images/brand/logo-wide-cropped.png";
 
   const navLinks = [
     { to: "/", label: "HOME" },
@@ -42,7 +42,7 @@ export function Navigation() {
             <img
               src={logoSrc}
               alt="Your Top Shop"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-14 md:h-[72px] w-auto object-contain drop-shadow-[0_0_10px_rgba(250,204,21,0.35)]"
             />
           </Link>
 
