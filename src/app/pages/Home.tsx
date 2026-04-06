@@ -16,29 +16,26 @@ import {
 } from "lucide-react";
 
 export function Home() {
-  const brandHeroImage = "/images/hero.png";
+  const brandHeroImage = "/images/hero.jpg";
 
   const featuredServices = [
     {
       id: "window-tint",
       title: "CERAMIC WINDOW TINT",
       description: "Advanced heat rejection and maximum privacy for the ultimate driving experience.",
-      image:
-        "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/tint.jpg",
     },
     {
       id: "vinyl-wrap",
       title: "PREMIUM VINYL WRAPS",
       description: "Complete color transformations and custom finishes with world-class materials.",
-      image:
-        "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/ppf.jpg",
     },
     {
       id: "ceramic-coating",
       title: "CERAMIC PROTECTION",
       description: "High-gloss, hydrophobic barrier that protects your vehicle's finish for years.",
-      image:
-        "https://images.unsplash.com/photo-1690022676526-2762ac826843?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/ceramic.jpg",
     },
   ];
 
