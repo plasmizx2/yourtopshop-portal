@@ -2,14 +2,20 @@ import { Link } from "react-router";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
+  const logoSrc = "/images/real/logo-wide-01.png";
+
   return (
     <footer className="bg-black text-gray-400 border-t border-gray-800 font-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex flex-col">
-              <span className="font-black text-2xl text-white tracking-tighter">YOUR TOP SHOP</span>
+            <div className="flex flex-col gap-3">
+              <img
+                src={logoSrc}
+                alt="Your Top Shop"
+                className="h-12 w-auto object-contain"
+              />
               <span className="text-yellow-400 font-bold tracking-widest uppercase">Premium Automotive Solutions</span>
             </div>
             <p className="text-sm leading-relaxed">

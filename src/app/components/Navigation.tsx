@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const logoSrc = "/images/real/logo-wide-01.png";
 
   const navLinks = [
     { to: "/", label: "HOME" },
@@ -37,16 +38,12 @@ export function Navigation() {
           </div>
 
           {/* Logo - Center */}
-          <Link to="/" className="flex flex-col items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-12 bg-yellow-400 clip-shield flex items-center justify-center">
-                <span className="text-black font-black text-2xl">Y</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-black text-2xl text-white tracking-tighter leading-none">YOUR TOP SHOP</span>
-                <span className="text-[10px] text-gray-500 font-bold tracking-[0.3em] uppercase">Auto Solutions</span>
-              </div>
-            </div>
+          <Link to="/" className="flex items-center justify-center">
+            <img
+              src={logoSrc}
+              alt="Your Top Shop"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Right Button */}
