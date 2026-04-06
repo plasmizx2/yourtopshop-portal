@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
-  const logoSrc = "/images/real/logo-wide-01.png";
+  const logoSrc = "/images/real/logo-wide-transparent.png";
 
   return (
     <footer className="bg-black text-gray-400 border-t border-gray-800 font-light">
