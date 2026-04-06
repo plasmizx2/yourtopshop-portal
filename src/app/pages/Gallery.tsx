@@ -18,42 +18,42 @@ export function Gallery() {
 
   const galleryItems = [
     {
-      src: "/images/gallery_porsche.png",
+      src: "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1600&auto=format&fit=crop",
       title: "Porsche GT3 - Ultimate Ceramic Protection",
       category: "automotive",
     },
     {
-      src: "/images/gallery_tesla.png",
+      src: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1600&auto=format&fit=crop",
       title: "Tesla Model Y - Signature Matte Black Wrap",
       category: "wraps",
     },
     {
-      src: "/images/gallery_bmw.png",
+      src: "https://images.unsplash.com/photo-1690022676526-2762ac826843?q=80&w=1600&auto=format&fit=crop",
       title: "BMW M4 - Executive Ceramic Tint",
       category: "automotive",
     },
     {
-      src: "/images/tint.png",
+      src: "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1600&auto=format&fit=crop",
       title: "Luxury Sedan - High Heat Rejection",
       category: "automotive",
     },
     {
-      src: "/images/ppf.png",
+      src: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1600&auto=format&fit=crop",
       title: "Satin Finish Protection Film",
       category: "wraps",
     },
     {
-      src: "/images/ceramic.png",
+      src: "https://images.unsplash.com/photo-1690022676526-2762ac826843?q=80&w=1600&auto=format&fit=crop",
       title: "Hydrophobic Glass Shield",
       category: "automotive",
     },
     {
-      src: "/images/hero.png",
+      src: "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=2400&auto=format&fit=crop",
       title: "Custom Showroom Build",
       category: "wraps",
     },
     {
-      src: "/images/gallery_tesla.png",
+      src: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1600&auto=format&fit=crop",
       title: "Full Vehicle Restoration",
       category: "automotive",
     },

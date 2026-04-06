@@ -16,24 +16,30 @@ import {
 } from "lucide-react";
 
 export function Home() {
+  const brandHeroImage =
+    "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=2400&auto=format&fit=crop";
+
   const featuredServices = [
     {
       id: "window-tint",
       title: "CERAMIC WINDOW TINT",
       description: "Advanced heat rejection and maximum privacy for the ultimate driving experience.",
-      image: "/images/tint.jpg",
+      image:
+        "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1600&auto=format&fit=crop",
     },
     {
       id: "vinyl-wrap",
       title: "PREMIUM VINYL WRAPS",
       description: "Complete color transformations and custom finishes with world-class materials.",
-      image: "/images/ppf.jpg",
+      image:
+        "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1600&auto=format&fit=crop",
     },
     {
       id: "ceramic-coating",
       title: "CERAMIC PROTECTION",
       description: "High-gloss, hydrophobic barrier that protects your vehicle's finish for years.",
-      image: "/images/ceramic.jpg",
+      image:
+        "https://images.unsplash.com/photo-1690022676526-2762ac826843?q=80&w=1600&auto=format&fit=crop",
     },
   ];
 
@@ -43,7 +49,7 @@ export function Home() {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="/images/hero.jpg"
+            src={brandHeroImage}
             alt="Luxury vehicle"
             className="w-full h-full object-cover opacity-60 scale-105"
           />
@@ -234,11 +240,11 @@ export function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-1">
           {[
-            "/images/tint.jpg",
-            "/images/ppf.jpg",
-            "/images/ceramic.jpg",
-            "/images/hero.jpg",
-            "/images/tint.jpg"
+            featuredServices[0].image,
+            featuredServices[1].image,
+            featuredServices[2].image,
+            brandHeroImage,
+            featuredServices[0].image,
           ].map((img, i) => (
             <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden bg-zinc-950">
                <img src={img} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="Instagram" />

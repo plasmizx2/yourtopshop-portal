@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 const ADMIN_PIN = process.env.ADMIN_PIN || '1234';
+const IS_DEV = process.env.DEV === 'true';
 
 
 // Stripe init
@@ -389,10 +390,28 @@ app.post('/api/admin/inquiries/status', (req, res) => {
 
 // ─── Production Catch-all ───
 // In production, serve the built React files
-if (!process.env.DEV) {
+if (!IS_DEV) {
   const distPath = path.join(__dirname, 'dist');
+  const publicPath = path.join(__dirname, 'public');
+
+  // Explicitly serve SEO/static assets first so they never hit SPA routing.
+  app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(distPath, 'robots.txt'));
+  });
+
+  app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(distPath, 'sitemap.xml'));
+  });
+
+  // Serve any images placed in public/images (copied into dist/images at build time),
+  // and also allow direct serving from public in case dist doesn't include them.
+  app.use('/images', express.static(path.join(distPath, 'images')));
+  app.use('/images', express.static(path.join(publicPath, 'images')));
+
+  // Serve the built app.
   app.use(express.static(distPath));
-  
+
   // Fallback catch-all for SPA routing (avoids wildcard regex issues)
   app.use((req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
