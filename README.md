@@ -11,6 +11,7 @@ Your Top Shop (Cranston, RI) provides premium vehicle preservation services. Thi
 - **Admin Command Center**: Complete control over appointments, maintenance blocks, and manual leads.
 - **CSV Data Export**: One-click download of business records for accounting.
 - **Stripe Integrated**: Production-ready payment processing and webhook verification.
+- **Render Blueprint**: Includes `render.yaml` for one-click "Web Service" deployment.
 
 ## 🛠️ Technology Stack
 - **Frontend**: React (Vite), Tailwind CSS, Framer Motion.
