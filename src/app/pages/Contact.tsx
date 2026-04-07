@@ -16,6 +16,10 @@ import { motion } from "motion/react";
 export function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const directionsUrl =
+    "https://www.google.com/maps/dir/?api=1&destination=99+Fletcher+Ave%2C+Cranston%2C+RI+02920";
+  const mapEmbedUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.7236935721947!2d-71.45033!3d41.76845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4456c67adecb1%3A0x8677f5f9be88a2f4!2s99%20Fletcher%20Ave%2C%20Cranston%2C%20RI%2002920!5e0!3m2!1sen!2sus!4v1712350000000!5m2!1sen!2sus";
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -82,6 +86,36 @@ export function Contact() {
                       <p className="text-lg font-light leading-relaxed">
                         99 Fletcher Ave<br />Cranston, RI 02920
                       </p>
+                    </div>
+                  </div>
+
+                  {/* Map + Directions */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                    <div className="aspect-square bg-zinc-950 border border-gray-900 overflow-hidden">
+                      <iframe
+                        src={mapEmbedUrl}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Your Top Shop Location"
+                        className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
+                      />
+                    </div>
+                    <div className="bg-zinc-950 border border-gray-900 p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2 text-gray-400">Directions</h3>
+                        <p className="text-sm text-gray-400 font-light leading-relaxed">
+                          Tap below to open turn-by-turn directions to our Cranston shop.
+                        </p>
+                      </div>
+                      <Button asChild className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-black font-black py-6 rounded-none tracking-widest uppercase">
+                        <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
+                          Get Directions
+                        </a>
+                      </Button>
                     </div>
                   </div>
 
@@ -233,20 +267,6 @@ export function Contact() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="h-[500px] border-t border-gray-900 grayscale hover:grayscale-0 transition-all duration-1000 grayscale opacity-60">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.7236935721947!2d-71.45033!3d41.76845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4456c67adecb1%3A0x8677f5f9be88a2f4!2s99%20Fletcher%20Ave%2C%20Cranston%2C%20RI%2002920!5e0!3m2!1sen!2sus!4v1712350000000!5m2!1sen!2sus"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Your Top Shop Location"
-        />
       </section>
     </div>
   );
