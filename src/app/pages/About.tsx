@@ -8,7 +8,7 @@ export function About() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=2000&auto=format&fit=crop"
+            src="/images/hero.jpg"
             alt="Workshop"
             className="w-full h-full object-cover opacity-40"
           />
@@ -53,7 +53,7 @@ export function About() {
           <div className="relative">
             <div className="aspect-square bg-gray-900 rounded-2xl overflow-hidden shadow-2xl skew-y-3">
               <img
-                src="https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1000&auto=format&fit=crop"
+                src="/images/real-optimized/gallery-detail-02.jpg"
                 alt="Detailing work"
                 className="w-full h-full object-cover"
               />
