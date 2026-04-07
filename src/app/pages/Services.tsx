@@ -113,7 +113,11 @@ export function Services() {
       </section>
 
       {/* CTA Bottom */}
-      <section className="bg-zinc-950 py-32 border-t border-gray-900">
+      <section className="relative bg-black py-32 border-t border-gray-900 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/95" />
+          <div className="absolute -top-24 left-1/2 h-64 w-[900px] -translate-x-1/2 bg-yellow-400/5 blur-[120px]" />
+        </div>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter">
             NOT FINDING WHAT YOU'RE LOOKING FOR?
