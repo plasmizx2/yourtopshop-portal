@@ -5,31 +5,31 @@ import { ChevronRight, Calendar } from "lucide-react";
 
 export function Services() {
   const visualGrid = [
-    { title: "VINYL WRAP", image: "https://images.unsplash.com/photo-1760550517611-31732ef31135?q=80&w=1200&auto=format&fit=crop", to: "/services/vinyl-wrap" },
-    { title: "AUTO DETAILING", image: "https://images.unsplash.com/photo-11552933529-e359b2477262?q=80&w=1200&auto=format&fit=crop", to: "/services/detailing" },
-    { title: "CERAMIC TINT", image: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1200&auto=format&fit=crop", to: "/services/window-tint" },
-    { title: "PAINT PROTECTION", image: "https://images.unsplash.com/photo-1766468779836-832104519965?q=80&w=1200&auto=format&fit=crop", to: "/services/ppf" },
-    { title: "CERAMIC COATING", image: "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=1200&auto=format&fit=crop", to: "/services/ceramic-coating" },
-    { title: "CHROME DELETE", image: "https://images.unsplash.com/photo-1747000239163-b6e5676542b0?q=80&w=1200&auto=format&fit=crop", to: "/services/chrome-delete" },
+    { title: "VINYL WRAP", image: "/images/real-optimized/gallery-wrap-01.jpg", to: "/services/vinyl-wrap" },
+    { title: "AUTO DETAILING", image: "/images/real-optimized/gallery-detail-01.jpg", to: "/services/detailing" },
+    { title: "CERAMIC TINT", image: "/images/tint.jpg", to: "/services/window-tint" },
+    { title: "PAINT PROTECTION", image: "/images/ppf.jpg", to: "/services/ppf" },
+    { title: "CERAMIC COATING", image: "/images/ceramic.jpg", to: "/services/ceramic-coating" },
+    { title: "CHROME DELETE", image: "/images/real/gallery-commercial-01.png", to: "/services/chrome-delete" },
   ];
 
   const popularServices = [
     {
       id: "window-tint",
       title: "WINDOW TINT",
-      image: "https://images.unsplash.com/photo-1690022676526-2762ac826843?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/tint.jpg",
       desc: "Enhance your privacy and protect against harmful UV rays with our professional window tinting service. Choose from a variety of tint shades to suit your preferences."
     },
     {
       id: "ceramic-coating",
       title: "CERAMIC COATING",
-      image: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/ceramic.jpg",
       desc: "Give your vehicle long-lasting protection with our Ceramic Pro coating. This advanced ceramic coating creates a durable barrier against dirt, UV rays, and the environmental elements."
     },
     {
       id: "ppf",
       title: "PAINT PROTECTION FILM",
-      image: "https://images.unsplash.com/photo-1650027539054-bca84ab5ea75?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/ppf.jpg",
       desc: "Safeguard your vehicle's paint from chips, scratches, and road debris with our high-quality paint protection film. This transparent film provides an invisible shield for your vehicle."
     }
   ];
