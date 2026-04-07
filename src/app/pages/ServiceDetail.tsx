@@ -9,7 +9,7 @@ const serviceData: Record<string, any> = {
     subtitle: "services",
     description: "Vinyl wrap is a customizable, adhesive film applied to a vehicle's exterior to change its color or finish without permanent paint alterations. Available in a wide range of colors, textures, and finishes—including gloss, matte, satin, and carbon fiber—vinyl wrap allows for a fully personalized look. It's a popular choice for both aesthetic upgrades and branding, offering a cost-effective alternative to repainting.",
     description2: "In addition to its visual appeal, vinyl wrap provides a layer of protection against minor scratches, UV rays, and environmental damage. The material is durable yet removable, making it easy to switch styles or restore the vehicle to its original finish without damaging the paint. Whether for a bold transformation or subtle enhancement, vinyl wrapping is a versatile and practical solution.",
-    image: "https://images.unsplash.com/photo-1760550517611-31732ef31135?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/real-optimized/gallery-wrap-01.jpg",
     features: ["Color Change Wraps", "Partial Wraps", "Chrome Delete", "Interior Trim Wrapping", "Custom Branding & Decals"],
   },
   "window-tint": {
@@ -17,7 +17,7 @@ const serviceData: Record<string, any> = {
     subtitle: "protection",
     description: "Enhance your privacy and protect against harmful UV rays with our professional window tinting service. We offer a variety of tint shades to suit your preferences, from subtle to maximum privacy.",
     description2: "Our high-performance ceramic films reduce interior heat, prevent upholstery fading, and provide a sleek, uniform look. All installations are performed with surgical precision to ensure no bubbling or peeling for years to come.",
-    image: "https://images.unsplash.com/photo-1621359953476-b1645f783bb1?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/tint.jpg",
     features: ["Ceramic Heat Rejection", "Carbon Privacy Tint", "UV Protection (99%)", "Glar Reduction", "Lifetime Warranty"],
   },
   "ceramic-coating": {
@@ -25,7 +25,7 @@ const serviceData: Record<string, any> = {
     subtitle: "solutions",
     description: "Give your vehicle long-lasting protection with our Ceramic Pro coating. This advanced ceramic coating creates a durable barrier against dirt, UV rays, and the environmental elements.",
     description2: "The hydrophobic properties make washing your car effortless, while the intense gloss enhancement gives your paint a deep, mirror-like finish that lasts for years, not months.",
-    image: "https://images.unsplash.com/photo-1549399542-7db3f01f05ad?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/ceramic.jpg",
     features: ["9H Hardness", "Self-Cleaning Properties", "UV & Chemical Resistance", "Intense Gloss Enhancement", "3-5 Year Durability"],
   },
   "detailing": {
@@ -33,7 +33,7 @@ const serviceData: Record<string, any> = {
     subtitle: "restoration",
     description: "Our comprehensive detailing services restore your vehicle to its showroom condition. We go beyond a simple wash, focusing on every deep-clean aspect of your car's interior and exterior.",
     description2: "From leather conditioning and steam cleaning to paint decontamination and hand polishing, we treat every inch of your vehicle with the care it deserves.",
-    image: "https://images.unsplash.com/photo-1552933529-e359b2477262?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/real-optimized/gallery-detail-01.jpg",
     features: ["Interior Steam Cleaning", "Leather Reconditioning", "Paint Decontamination", "Clay Bar Treatment", "Hand Polish & Wax"],
   }
 };
