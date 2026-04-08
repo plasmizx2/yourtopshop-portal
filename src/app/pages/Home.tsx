@@ -80,12 +80,6 @@ export function Home() {
             </div>
           </motion.div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50">
-          <span className="text-[10px] font-bold tracking-[0.5em] uppercase vertical-text">SCROLL</span>
-          <div className="w-[1px] h-12 bg-white/20 animate-pulse" />
-        </div>
       </section>
 
       {/* Stats Bar */}
