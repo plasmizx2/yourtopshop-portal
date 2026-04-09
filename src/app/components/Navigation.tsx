@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const logoSrc = "/images/brand/logo-wide-cropped.png";
+  const logoSrc = "/images/brand/logo-new.png";
 
   const navLinks = [
     { to: "/", label: "HOME" },

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
-  const logoSrc = "/images/brand/logo-wide-cropped.png";
+  const logoSrc = "/images/brand/logo-new.png";
 
   return (
     <footer className="camo-surface text-gray-300 border-t border-white/10 font-light">
