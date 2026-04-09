@@ -43,7 +43,7 @@ export function ServiceDetail() {
   const service = serviceData[id || "vinyl-wrap"] || serviceData["vinyl-wrap"];
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -52,7 +52,7 @@ export function ServiceDetail() {
             alt={service.title}
             className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#121416] via-transparent to-[#121416]/70" />
         </div>
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 text-center">

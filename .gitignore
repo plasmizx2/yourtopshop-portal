@@ -1,22 +1,6 @@
-## Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 ## OS / editor
 .DS_Store
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.log
 
 ## Local secrets
 .env
@@ -26,25 +10,8 @@ lerna-debug.log*
 ## Node / build output
 node_modules/
 dist/
-dist-ssr/
 build/
 .vite/
-*.local
-.parcel-cache/
-.turbo/
-.next/
-.nuxt/
-.svelte-kit/
-.output/
-.docusaurus/
-.vercel/
-.netlify/
-.cache/
-.npm/
-.eslintcache
-.stylelintcache
-bower_components/
-jspm_packages/
 
 ## App runtime data (local JSON persistence)
 tinting-company-website/data/*.json

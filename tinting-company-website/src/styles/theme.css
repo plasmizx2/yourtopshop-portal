@@ -79,8 +79,8 @@
   --sidebar-ring: oklch(0.439 0 0);
 
   /* Extra camo tones used for subtle texture layers */
-  --camo-a: rgba(148, 163, 184, 0.08); /* slate */
-  --camo-b: rgba(113, 122, 132, 0.10); /* steel */
+  --camo-a: rgba(148, 163, 184, 0.16); /* slate (stronger) */
+  --camo-b: rgba(113, 122, 132, 0.18); /* steel (stronger) */
 }
 
 @theme inline {
@@ -141,6 +141,7 @@
       radial-gradient(900px 700px at 80% 25%, var(--camo-b), transparent 60%),
       radial-gradient(700px 500px at 35% 85%, var(--camo-b), transparent 58%),
       radial-gradient(600px 450px at 75% 80%, var(--camo-a), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 18px, rgba(0,0,0,0.08) 18px 36px),
       linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.35));
     background-attachment: fixed;
   }

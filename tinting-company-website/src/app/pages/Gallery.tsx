@@ -95,9 +95,9 @@ export function Gallery() {
   };
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Hero Section */}
-      <section className="bg-black py-24 border-b border-gray-900">
+      <section className="camo-surface py-24 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -185,7 +185,7 @@ export function Gallery() {
       {/* Image Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/98 z-50 flex items-center justify-center p-4 cursor-zoom-out"
+          className="fixed inset-0 bg-[#0f1113]/98 z-50 flex items-center justify-center p-4 cursor-zoom-out"
           onClick={() => setSelectedImage(null)}
         >
           <button

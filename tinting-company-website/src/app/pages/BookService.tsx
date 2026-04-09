@@ -240,7 +240,7 @@ export function BookService() {
   // ─── If returning from successful Stripe payment ───
   if (isSuccess) {
     return (
-      <div className="w-full bg-black min-h-screen text-white pt-12 pb-24 font-sans">
+      <div className="w-full min-h-screen text-foreground pt-12 pb-24 font-sans camo-page">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -262,7 +262,7 @@ export function BookService() {
               Your booking has been received and logged.
             </p>
 
-            <div className="max-w-md mx-auto p-10 bg-black border border-zinc-900 text-left space-y-6 relative z-10">
+            <div className="max-w-md mx-auto p-10 camo-surface border border-white/10 text-left space-y-6 relative z-10">
               <div className="space-y-4">
                 <p className="text-[9px] font-black text-zinc-600 uppercase tracking-[0.3em] border-b border-zinc-900 pb-2">
                   Appointment Details
@@ -316,7 +316,7 @@ export function BookService() {
   }
 
   return (
-    <div className="w-full bg-black min-h-screen text-white pt-12 pb-24 font-sans">
+    <div className="w-full min-h-screen text-foreground pt-12 pb-24 font-sans camo-page">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -447,12 +447,12 @@ export function BookService() {
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Service</p>
                     <p className="text-xl font-black text-black uppercase tracking-tighter">{customService || currentConfig?.title}</p>
                   </div>
-                  <div className="w-px h-12 bg-black/10" />
+                  <div className="w-px h-12 bg-white/10" />
                   <div className="text-left">
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Total</p>
                     <p className="text-2xl font-black text-black">{customPrice ? `$${customPrice}` : (currentConfig?.price || "—")}</p>
                   </div>
-                  <div className="w-px h-12 bg-black/10" />
+                  <div className="w-px h-12 bg-white/10" />
                   <div className="text-left">
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Duration</p>
                     <p className="text-xl font-black text-black uppercase italic">{customService ? "Custom" : currentConfig?.time}</p>
@@ -474,7 +474,7 @@ export function BookService() {
                       selected={selectedDate}
                       onSelect={(date) => { setSelectedDate(date); setSelectedTime(null); }}
                       disabled={(date) => isSunday(date) || date < startOfToday() || availability.blockedDays.includes(format(date, 'MMMM do, yyyy'))}
-                      className="bg-black border border-zinc-900 mx-auto"
+                      className="bg-input-background border border-white/10 mx-auto"
                     />
                     <div className="p-4 bg-zinc-900/50 border border-zinc-900">
                       <p className="text-[9px] font-bold text-zinc-500 uppercase flex justify-between">
@@ -501,10 +501,10 @@ export function BookService() {
                             onClick={() => setSelectedTime(time)}
                             className={`py-4 border text-[10px] font-black tracking-widest transition-all ${
                               unavailable
-                                ? "opacity-30 cursor-not-allowed border-red-900/50 bg-black text-red-500/50"
+                                ? "opacity-30 cursor-not-allowed border-red-900/50 bg-input-background text-red-500/60"
                                 : selectedTime === time
                                 ? "border-yellow-400 bg-yellow-400 text-black"
-                                : "border-zinc-900 bg-black text-zinc-500 hover:border-zinc-700 hover:text-white"
+                                : "border-white/10 bg-input-background text-zinc-300 hover:border-white/20 hover:text-white"
                             }`}
                           >
                             {unavailable ? "BOOKED" : time}
@@ -531,7 +531,7 @@ export function BookService() {
                     <button
                       onClick={handlePay}
                       disabled={isProcessing}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-yellow-400 hover:text-yellow-400 disabled:opacity-50"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-yellow-400 hover:text-yellow-400 disabled:opacity-50"
                     >
                       <CreditCard className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       {isProcessing ? "REDIRECTING..." : "PAY WITH CARD"}
@@ -539,7 +539,7 @@ export function BookService() {
                     {/* Venmo */}
                     <button
                       onClick={() => handleManualPay("venmo", "https://venmo.com/ytsautocare123")}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-blue-500 hover:text-blue-500"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-blue-500 hover:text-blue-500"
                     >
                       <ExternalLink className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       VENMO
@@ -547,7 +547,7 @@ export function BookService() {
                     {/* CashApp */}
                     <button
                       onClick={() => handleManualPay("cashapp", "https://cash.app/$YourTopShop123")}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-green-500 hover:text-green-500"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-green-500 hover:text-green-500"
                     >
                       <ExternalLink className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       CASHAPP
@@ -586,34 +586,34 @@ export function BookService() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Full Name</label>
-                      <input required type="text" value={quoteData.name} onChange={(e) => setQuoteData({...quoteData, name: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="JOHN DOE" />
+                      <input required type="text" value={quoteData.name} onChange={(e) => setQuoteData({...quoteData, name: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="JOHN DOE" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Email Address</label>
-                      <input required type="email" value={quoteData.email} onChange={(e) => setQuoteData({...quoteData, email: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="JOHN@EXAMPLE.COM" />
+                      <input required type="email" value={quoteData.email} onChange={(e) => setQuoteData({...quoteData, email: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="JOHN@EXAMPLE.COM" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Phone Number</label>
-                      <input required type="tel" value={quoteData.phone} onChange={(e) => setQuoteData({...quoteData, phone: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="(401) 000-0000" />
+                      <input required type="tel" value={quoteData.phone} onChange={(e) => setQuoteData({...quoteData, phone: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="(401) 000-0000" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Vehicle Year</label>
-                      <input required type="text" value={quoteData.year} onChange={(e) => setQuoteData({...quoteData, year: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="2024" />
+                      <input required type="text" value={quoteData.year} onChange={(e) => setQuoteData({...quoteData, year: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="2024" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Make</label>
-                      <input required type="text" value={quoteData.make} onChange={(e) => setQuoteData({...quoteData, make: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="TESLA" />
+                      <input required type="text" value={quoteData.make} onChange={(e) => setQuoteData({...quoteData, make: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="TESLA" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Model</label>
-                      <input required type="text" value={quoteData.model} onChange={(e) => setQuoteData({...quoteData, model: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="MODEL S" />
+                      <input required type="text" value={quoteData.model} onChange={(e) => setQuoteData({...quoteData, model: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="MODEL S" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Project Specifics</label>
-                    <textarea value={quoteData.notes} onChange={(e) => setQuoteData({...quoteData, notes: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none min-h-[120px] uppercase" placeholder="DESCRIBE YOUR REQUEST..." />
+                    <textarea value={quoteData.notes} onChange={(e) => setQuoteData({...quoteData, notes: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none min-h-[120px] uppercase" placeholder="DESCRIBE YOUR REQUEST..." />
                   </div>
                   <Button type="submit" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-black py-8 rounded-none tracking-[0.3em] uppercase text-lg shadow-2xl">
                     Send Quote Request

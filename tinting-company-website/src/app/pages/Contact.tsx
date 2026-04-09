@@ -50,9 +50,9 @@ export function Contact() {
   };
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Hero Section */}
-      <section className="bg-black py-24 border-b border-gray-900">
+      <section className="camo-surface py-24 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -210,29 +210,29 @@ export function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <Label htmlFor="firstName" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">First Name</Label>
-                        <Input id="firstName" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="firstName" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                       <div className="space-y-3">
                         <Label htmlFor="lastName" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Last Name</Label>
-                        <Input id="lastName" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="lastName" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <Label htmlFor="email" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Email Address</Label>
-                        <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                       <div className="space-y-3">
                         <Label htmlFor="phone" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Phone Number</Label>
-                        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                     </div>
 
                     <div className="space-y-3">
                       <Label htmlFor="service" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Service Interest</Label>
                       <Select value={formData.service} onValueChange={(val) => setFormData({...formData, service: val})} required>
-                        <SelectTrigger id="service" className="bg-black border-gray-900 rounded-none h-14">
+                        <SelectTrigger id="service" className="bg-input-background border-white/10 rounded-none h-14">
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
                         <SelectContent className="bg-zinc-950 border-gray-900 text-white rounded-none">
@@ -252,7 +252,7 @@ export function Contact() {
                         id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
-                        className="bg-black border-gray-900 rounded-none min-h-[160px]"
+                        className="bg-input-background border-white/10 rounded-none min-h-[160px]"
                         placeholder="Tell us about your vehicle and what you're looking to achieve..."
                         required
                       />

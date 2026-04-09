@@ -222,7 +222,7 @@ export function Admin() {
                 value={pin}
                 onChange={(e) => setPin(e.target.value)}
                 placeholder="••••"
-                className="w-full bg-black border border-zinc-900 p-4 text-center text-2xl font-black tracking-[1em] focus:border-yellow-400 outline-none"
+                className="w-full bg-input-background border border-white/10 p-4 text-center text-2xl font-black tracking-[1em] focus:border-yellow-400 outline-none"
                 autoFocus
               />
             </div>
@@ -293,8 +293,8 @@ export function Admin() {
           <div className="p-6 border-b border-zinc-900 bg-zinc-950/50 flex flex-col md:flex-row justify-between items-center gap-4">
             <h2 className="text-sm font-black uppercase tracking-widest">Schedule Management</h2>
             <div className="flex gap-2 items-center">
-              <input type="date" value={blockDate} onChange={e => setBlockDate(e.target.value)} className="bg-black border border-zinc-900 p-2 text-xs w-36 text-zinc-400 focus:text-white" style={{colorScheme: "dark"}} />
-              <div className="flex items-center bg-black border border-zinc-900 px-2 gap-1">
+              <input type="date" value={blockDate} onChange={e => setBlockDate(e.target.value)} className="bg-input-background border border-white/10 p-2 text-xs w-36 text-zinc-300 focus:text-white" style={{colorScheme: "dark"}} />
+              <div className="flex items-center bg-input-background border border-white/10 px-2 gap-1">
                 <input type="time" value={blockTime} onChange={e => setBlockTime(e.target.value)} className="bg-transparent p-2 text-xs w-28 text-zinc-400 focus:text-white" style={{colorScheme: "dark"}} />
                 <span className="text-zinc-700 text-[10px]">TO</span>
                 <input type="time" value={blockEndTime} onChange={e => setBlockEndTime(e.target.value)} className="bg-transparent p-2 text-xs w-28 text-zinc-400 focus:text-white" style={{colorScheme: "dark"}} />
@@ -397,7 +397,7 @@ export function Admin() {
                       {booking.paymentStatus !== "canceled" && (
                         <button 
                           onClick={() => cancelBooking(booking.id)} 
-                          className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-500 hover:text-red-500 hover:border-red-500/50 border border-zinc-800 px-4 py-1.5 transition-all bg-black"
+                          className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-300 hover:text-red-500 hover:border-red-500/50 border border-white/10 px-4 py-1.5 transition-all bg-input-background"
                         >
                           Cancel Appointment
                         </button>
@@ -431,7 +431,7 @@ export function Admin() {
                                  <span className="text-[8px] bg-blue-400/10 text-blue-400 px-2 py-0.5 font-bold uppercase tracking-widest border border-blue-400/20">{inq.service}</span>
                               </div>
                               <p className="text-[10px] text-zinc-500 font-medium uppercase tracking-[0.2em] mb-4">{inq.email} • {inq.phone}</p>
-                              <p className="text-xs text-zinc-400 leading-relaxed max-w-2xl bg-black/50 p-4 border-l-2 border-blue-500 uppercase font-bold tracking-tight">{inq.message}</p>
+                              <p className="text-xs text-zinc-300 leading-relaxed max-w-2xl bg-[#0f1113]/50 p-4 border-l-2 border-blue-500 uppercase font-bold tracking-tight">{inq.message}</p>
                            </div>
                            <div className="text-right">
                               <p className="text-[9px] text-zinc-700 font-black uppercase tracking-widest">{format(new Date(inq.createdAt), 'MMM do, HH:mm')}</p>

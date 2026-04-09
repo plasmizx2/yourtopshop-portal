@@ -35,9 +35,9 @@ export function Services() {
   ];
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Header Info */}
-      <section className="bg-black py-8 border-b border-gray-900">
+      <section className="camo-surface py-8 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-2">
               OUR SERVICES - <span className="text-yellow-400">BOOK ONLINE</span>
@@ -113,9 +113,9 @@ export function Services() {
       </section>
 
       {/* CTA Bottom */}
-      <section className="relative bg-black py-32 border-t border-gray-900 overflow-hidden">
+      <section className="relative camo-surface py-32 border-t border-white/10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#121416] via-[#121416] to-[#121416]/95" />
           <div className="absolute -top-24 left-1/2 h-64 w-[900px] -translate-x-1/2 bg-yellow-400/5 blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center">

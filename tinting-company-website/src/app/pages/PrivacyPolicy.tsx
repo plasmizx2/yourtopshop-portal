@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function PrivacyPolicy() {
   return (
-    <div className="w-full bg-black text-white py-24 px-6 md:px-12 font-light">
+    <div className="w-full text-foreground py-24 px-6 md:px-12 font-light">
       <div className="max-w-4xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: 10 }}
@@ -12,7 +12,7 @@ export function PrivacyPolicy() {
           Privacy Policy
         </motion.h1>
         
-        <div className="space-y-12 text-gray-500 text-lg leading-relaxed">
+        <div className="space-y-12 text-gray-400 text-lg leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-widest">01. Overview</h2>
             <p>

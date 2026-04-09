@@ -176,7 +176,7 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative h-[600px] overflow-hidden bg-black border border-white/5"
+                className="group relative h-[600px] overflow-hidden camo-surface border border-white/10"
               >
                 <img
                   src={service.image}
@@ -200,7 +200,7 @@ export function Home() {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 px-6 border-b border-gray-900 bg-black">
+      <section className="py-32 px-6 border-b border-white/10 camo-surface">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
              {[
@@ -252,7 +252,7 @@ export function Home() {
           <h2 className="text-5xl md:text-8xl font-black mb-12 uppercase tracking-tighter leading-tight">
             ELEVATE YOUR<br />STREET PRESENCE.
           </h2>
-          <Button asChild size="lg" className="bg-black text-white hover:bg-black/80 font-black px-16 py-10 text-2xl rounded-none tracking-widest uppercase transition-transform hover:scale-105 shadow-2xl">
+          <Button asChild size="lg" className="bg-[#171a1e] text-white hover:bg-[#171a1e]/80 font-black px-16 py-10 text-2xl rounded-none tracking-widest uppercase transition-transform hover:scale-105 shadow-2xl border border-white/10">
             <Link to="/book-service">Secure Your Spot</Link>
           </Button>
           <div className="mt-16 flex flex-wrap justify-center gap-12 text-sm font-black tracking-widest uppercase pointer-events-none opacity-80">
