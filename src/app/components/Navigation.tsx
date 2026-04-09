@@ -19,9 +19,10 @@ export function Navigation() {
   return (
     <nav className="camo-surface border-b border-white/10 sticky top-0 z-50 py-4">
       <div className="max-w-[1400px] mx-auto px-6">
-        <div className="flex justify-between items-center">
-          {/* Menu Links - Desktop (Two rows on left) */}
-          <div className="hidden lg:grid grid-cols-3 gap-x-8 gap-y-2 text-[11px] font-bold tracking-[0.2em]">
+        {/* Desktop Layout (Standard Grid for centering) */}
+        <div className="hidden lg:grid grid-cols-3 items-center">
+          {/* Menu Links - Left Column */}
+          <div className="grid grid-cols-3 gap-x-8 gap-y-2 text-[11px] font-bold tracking-[0.2em] w-full">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -37,29 +38,41 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Logo - Center */}
-          <Link to="/" className="flex items-center justify-center">
-            <img
-              src={logoSrc}
-              alt="Your Top Shop"
-              className="h-20 md:h-[100px] w-auto object-contain"
-            />
-          </Link>
+          {/* Logo - Center Column */}
+          <div className="flex justify-center">
+            <Link to="/" className="flex items-center">
+              <img
+                src={logoSrc}
+                alt="Your Top Shop"
+                className="h-[130px] w-auto object-contain transition-transform hover:scale-105"
+              />
+            </Link>
+          </div>
 
-          {/* Right Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Actions - Right Column */}
+          <div className="flex items-center justify-end gap-4">
             <Button asChild variant="outline" className="border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600 font-bold px-6 py-6 text-[10px] rounded-none tracking-widest uppercase transition-all">
               <Link to="/admin">Admin</Link>
             </Button>
-            <Button asChild className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-6 text-sm rounded-none tracking-widest uppercase">
+            <Button asChild className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-6 text-sm rounded-none tracking-widest uppercase shadow-lg shadow-yellow-400/10">
               <Link to="/book-service">Book Service</Link>
             </Button>
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
+        {/* Mobile/Small Tablet Layout */}
+        <div className="lg:hidden flex justify-between items-center">
+          <Link to="/" className="flex items-center">
+            <img
+              src={logoSrc}
+              alt="Your Top Shop"
+              className="h-16 w-auto object-contain"
+            />
+          </Link>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="p-2 text-foreground"
           >
             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
