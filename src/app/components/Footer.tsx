@@ -5,7 +5,7 @@ export function Footer() {
   const logoSrc = "/images/brand/logo-wide-cropped.png";
 
   return (
-    <footer className="bg-black text-gray-400 border-t border-gray-800 font-light">
+    <footer className="camo-surface text-gray-300 border-t border-white/10 font-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-white text-sm uppercase tracking-widest mb-6">Explore</h3>
+            <h3 className="font-bold text-foreground text-sm uppercase tracking-widest mb-6">Explore</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/" className="hover:text-yellow-400 transition-colors">Home</Link></li>
               <li><Link to="/book-service" className="hover:text-yellow-400 transition-colors">Book Service</Link></li>
@@ -39,7 +39,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-white text-sm uppercase tracking-widest mb-6">Capabilities</h3>
+            <h3 className="font-bold text-foreground text-sm uppercase tracking-widest mb-6">Capabilities</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services/ceramic-tint" className="hover:text-yellow-400 transition-colors">Ceramic Window Tinting</Link></li>
               <li><Link to="/services/vinyl-wrap" className="hover:text-yellow-400 transition-colors">Vinyl Wraps & Color Changes</Link></li>
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-white text-sm uppercase tracking-widest mb-6">HQ</h3>
+            <h3 className="font-bold text-foreground text-sm uppercase tracking-widest mb-6">HQ</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-yellow-400 flex-shrink-0" />
@@ -73,7 +73,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs uppercase tracking-widest">© 2026 Your Top Shop. Crafted for Excellence.</p>
           <div className="flex gap-6">
             <a href="https://www.facebook.com/yourtopshopp/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-primary"><Facebook className="w-5 h-5" /></a>

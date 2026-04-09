@@ -41,26 +41,28 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+:root.dark {
+  /* Camo-gray base: visible gray, not black */
+  --background: #1e2228;
+  --foreground: #f3f4f6;
+  --card: #252a32;
+  --card-foreground: #f3f4f6;
+  --popover: #252a32;
+  --popover-foreground: #f3f4f6;
+  --primary: #f3f4f6;
+  --primary-foreground: #1a1e24;
+  --secondary: #2c323a;
+  --secondary-foreground: #f3f4f6;
+  --muted: #282d35;
+  --muted-foreground: #a3aab4;
+  --accent: #303840;
+  --accent-foreground: #f3f4f6;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.08);
+  --input-background: #2a3038;
+  --ring: rgba(250, 204, 21, 0.28);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: oklch(0.488 0.243 264.376);
@@ -68,14 +70,18 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: #232830;
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: #2e343c;
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-border: #2e343c;
   --sidebar-ring: oklch(0.439 0 0);
+
+  /* Extra camo tones used for subtle texture layers */
+  --camo-a: rgba(148, 163, 184, 0.20); /* slate */
+  --camo-b: rgba(113, 122, 132, 0.22); /* steel */
 }
 
 @theme inline {
@@ -126,6 +132,25 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* App-wide camo gray background texture (very subtle) */
+  .camo-page {
+    background-color: var(--background);
+    background-image:
+      radial-gradient(1200px 600px at 20% 10%, var(--camo-a), transparent 55%),
+      radial-gradient(900px 700px at 80% 25%, var(--camo-b), transparent 60%),
+      radial-gradient(700px 500px at 35% 85%, var(--camo-b), transparent 58%),
+      radial-gradient(600px 450px at 75% 80%, var(--camo-a), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 18px, rgba(0,0,0,0.08) 18px 36px),
+      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.35));
+    background-attachment: fixed;
+  }
+
+  /* Slightly lifted surface for nav/footer/sections */
+  .camo-surface {
+    background-color: rgba(37, 42, 50, 0.92);
+    backdrop-filter: blur(10px);
   }
 
   /**

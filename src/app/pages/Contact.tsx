@@ -50,9 +50,9 @@ export function Contact() {
   };
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Hero Section */}
-      <section className="bg-black py-24 border-b border-gray-900">
+      <section className="camo-surface py-24 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -78,7 +78,7 @@ export function Contact() {
                 <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Direct Channels</h2>
                 <div className="space-y-8">
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <MapPin className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -91,7 +91,7 @@ export function Contact() {
 
                   {/* Map + Directions */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                    <div className="aspect-square bg-zinc-950 border border-gray-900 overflow-hidden">
+                    <div className="aspect-square bg-[#252a32] border border-white/10 overflow-hidden">
                       <iframe
                         src={mapEmbedUrl}
                         width="100%"
@@ -104,7 +104,7 @@ export function Contact() {
                         className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
                       />
                     </div>
-                    <div className="bg-zinc-950 border border-gray-900 p-6 flex flex-col justify-between">
+                    <div className="bg-[#252a32] border border-white/10 p-6 flex flex-col justify-between">
                       <div>
                         <h3 className="font-bold uppercase tracking-widest text-sm mb-2 text-gray-400">Directions</h3>
                         <p className="text-sm text-gray-400 font-light leading-relaxed">
@@ -120,7 +120,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Phone className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -132,7 +132,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Mail className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -144,7 +144,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Instagram className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -171,7 +171,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="p-8 bg-zinc-950 border border-gray-900">
+              <div className="p-8 bg-[#252a32] border border-white/10">
                 <Calendar className="w-8 h-8 text-yellow-400 mb-4" />
                 <h3 className="text-xl font-bold uppercase mb-2">Preferred Method</h3>
                 <p className="text-gray-400 font-light text-sm mb-6 leading-relaxed">
@@ -187,7 +187,7 @@ export function Contact() {
 
             {/* Right: Contact Form */}
             <div className="lg:col-span-7">
-              <div className="bg-zinc-950 border border-gray-900 p-10 md:p-12">
+              <div className="bg-[#252a32] border border-white/10 p-10 md:p-12">
                 <div className="flex items-center gap-4 mb-8">
                   <MessageSquare className="w-8 h-8 text-yellow-400" />
                   <h2 className="text-4xl font-black uppercase tracking-tighter">Request a Quote</h2>
@@ -210,32 +210,32 @@ export function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <Label htmlFor="firstName" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">First Name</Label>
-                        <Input id="firstName" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="firstName" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                       <div className="space-y-3">
                         <Label htmlFor="lastName" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Last Name</Label>
-                        <Input id="lastName" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="lastName" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <Label htmlFor="email" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Email Address</Label>
-                        <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                       <div className="space-y-3">
                         <Label htmlFor="phone" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Phone Number</Label>
-                        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="bg-black border-gray-900 rounded-none h-14" required />
+                        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="bg-input-background border-white/10 rounded-none h-14" required />
                       </div>
                     </div>
 
                     <div className="space-y-3">
                       <Label htmlFor="service" className="uppercase tracking-widest text-[10px] font-bold text-gray-500">Service Interest</Label>
                       <Select value={formData.service} onValueChange={(val) => setFormData({...formData, service: val})} required>
-                        <SelectTrigger id="service" className="bg-black border-gray-900 rounded-none h-14">
+                        <SelectTrigger id="service" className="bg-input-background border-white/10 rounded-none h-14">
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
-                        <SelectContent className="bg-zinc-950 border-gray-900 text-white rounded-none">
+                        <SelectContent className="bg-[#252a32] border-white/10 text-white rounded-none">
                           <SelectItem value="window-tint">Window Tinting</SelectItem>
                           <SelectItem value="detailing">Auto Detailing</SelectItem>
                           <SelectItem value="vinyl">Vinyl Wrap</SelectItem>
@@ -252,7 +252,7 @@ export function Contact() {
                         id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
-                        className="bg-black border-gray-900 rounded-none min-h-[160px]"
+                        className="bg-input-background border-white/10 rounded-none min-h-[160px]"
                         placeholder="Tell us about your vehicle and what you're looking to achieve..."
                         required
                       />

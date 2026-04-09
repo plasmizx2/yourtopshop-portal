@@ -3,7 +3,7 @@ import { Shield, Award, Users, Star } from "lucide-react";
 
 export function About() {
   return (
-    <div className="w-full bg-black text-white">
+    <div className="w-full text-foreground">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -12,7 +12,7 @@ export function About() {
             alt="Workshop"
             className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e2228]/70 via-transparent to-[#1e2228]" />
         </div>
         <div className="relative z-10 text-center px-4">
           <motion.h1 
@@ -51,7 +51,7 @@ export function About() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square bg-gray-900 rounded-2xl overflow-hidden shadow-2xl skew-y-3">
+            <div className="aspect-square camo-surface rounded-2xl overflow-hidden shadow-2xl skew-y-3 border border-white/10">
               <img
                 src="/images/real-optimized/gallery-detail-02.jpg"
                 alt="Detailing work"
@@ -67,7 +67,7 @@ export function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-[#252a32]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-black tracking-widest uppercase mb-4">Our Core Values</h2>
@@ -80,7 +80,7 @@ export function About() {
               { icon: Users, title: "COMMUNITY", desc: "Building lasting relationships with our local car culture." },
               { icon: Star, title: "MASTERY", desc: "Continuous training and refinement in all application methods." },
             ].map((item, i) => (
-              <div key={i} className="p-8 bg-black/50 border border-white/5 hover:border-yellow-400/50 transition-colors">
+              <div key={i} className="p-8 bg-[#2a3038]/50 border border-white/10 hover:border-yellow-400/50 transition-colors">
                 <item.icon className="w-10 h-10 text-yellow-400 mb-6" />
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>

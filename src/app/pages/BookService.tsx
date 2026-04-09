@@ -240,12 +240,12 @@ export function BookService() {
   // ─── If returning from successful Stripe payment ───
   if (isSuccess) {
     return (
-      <div className="w-full bg-black min-h-screen text-white pt-12 pb-24 font-sans">
+      <div className="w-full min-h-screen text-foreground pt-12 pb-24 font-sans camo-page">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="p-12 border border-yellow-400/20 bg-zinc-950 text-center relative overflow-hidden mt-16"
+            className="p-12 border border-yellow-400/20 bg-[#252a32] text-center relative overflow-hidden mt-16"
           >
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <LucideCalendar className="w-32 h-32" />
@@ -262,7 +262,7 @@ export function BookService() {
               Your booking has been received and logged.
             </p>
 
-            <div className="max-w-md mx-auto p-10 bg-black border border-zinc-900 text-left space-y-6 relative z-10">
+            <div className="max-w-md mx-auto p-10 camo-surface border border-white/10 text-left space-y-6 relative z-10">
               <div className="space-y-4">
                 <p className="text-[9px] font-black text-zinc-600 uppercase tracking-[0.3em] border-b border-zinc-900 pb-2">
                   Appointment Details
@@ -316,7 +316,7 @@ export function BookService() {
   }
 
   return (
-    <div className="w-full bg-black min-h-screen text-white pt-12 pb-24 font-sans">
+    <div className="w-full min-h-screen text-foreground pt-12 pb-24 font-sans camo-page">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -356,7 +356,7 @@ export function BookService() {
                   className={`p-6 border rounded-none text-left transition-all relative overflow-hidden group ${
                     selectedService === service.id
                       ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.05)]"
-                      : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                      : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                   }`}
                 >
                   <div className={`absolute top-0 left-0 w-1 h-full bg-yellow-400 transition-transform duration-300 ${selectedService === service.id ? "scale-y-100" : "scale-y-0"}`} />
@@ -384,7 +384,7 @@ export function BookService() {
                     className={`p-8 border rounded-none text-left transition-all relative group ${
                       selectedSubCategory === sub.id
                         ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.05)]"
-                        : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                        : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                     }`}
                   >
                     <h3 className="font-black mb-2 tracking-widest leading-none text-[11px] uppercase group-hover:text-yellow-400">{sub.title}</h3>
@@ -412,13 +412,13 @@ export function BookService() {
                     className={`p-6 border rounded-none text-left transition-all relative group ${
                       selectedConfig === config.id
                         ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.1)]"
-                        : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                        : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                     }`}
                   >
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-black tracking-widest leading-none text-[11px] uppercase group-hover:text-yellow-400 transition-colors w-2/3">{config.title}</h3>
                       <div className="flex flex-col items-end gap-1">
-                        <div className="flex items-center gap-1.5 px-2 py-1 bg-zinc-900 border border-zinc-800">
+                        <div className="flex items-center gap-1.5 px-2 py-1 bg-[#2a3038] border border-white/10">
                           <Clock className="w-3 h-3 text-yellow-400" />
                           <span className="text-[9px] text-zinc-100 font-black tracking-tight">{config.time}</span>
                         </div>
@@ -447,12 +447,12 @@ export function BookService() {
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Service</p>
                     <p className="text-xl font-black text-black uppercase tracking-tighter">{customService || currentConfig?.title}</p>
                   </div>
-                  <div className="w-px h-12 bg-black/10" />
+                  <div className="w-px h-12 bg-white/10" />
                   <div className="text-left">
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Total</p>
                     <p className="text-2xl font-black text-black">{customPrice ? `$${customPrice}` : (currentConfig?.price || "—")}</p>
                   </div>
-                  <div className="w-px h-12 bg-black/10" />
+                  <div className="w-px h-12 bg-white/10" />
                   <div className="text-left">
                     <p className="text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Duration</p>
                     <p className="text-xl font-black text-black uppercase italic">{customService ? "Custom" : currentConfig?.time}</p>
@@ -461,7 +461,7 @@ export function BookService() {
               </div>
 
               {/* Calendar + Time Picker */}
-              <div className="p-6 md:p-12 border border-zinc-900 bg-zinc-950/20 rounded-none overflow-hidden">
+              <div className="p-6 md:p-12 border border-white/10 bg-[#252a32]/20 rounded-none overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                   {/* Left: Calendar */}
                   <div className="space-y-6">
@@ -474,9 +474,9 @@ export function BookService() {
                       selected={selectedDate}
                       onSelect={(date) => { setSelectedDate(date); setSelectedTime(null); }}
                       disabled={(date) => isSunday(date) || date < startOfToday() || availability.blockedDays.includes(format(date, 'MMMM do, yyyy'))}
-                      className="bg-black border border-zinc-900 mx-auto"
+                      className="bg-input-background border border-white/10 mx-auto"
                     />
-                    <div className="p-4 bg-zinc-900/50 border border-zinc-900">
+                    <div className="p-4 bg-[#2a3038]/50 border border-white/10">
                       <p className="text-[9px] font-bold text-zinc-500 uppercase flex justify-between">
                         <span>Business Hours</span>
                         <span>{selectedDate && isSaturday(selectedDate) ? "7AM - 12PM" : "10AM - 5PM"}</span>
@@ -501,17 +501,17 @@ export function BookService() {
                             onClick={() => setSelectedTime(time)}
                             className={`py-4 border text-[10px] font-black tracking-widest transition-all ${
                               unavailable
-                                ? "opacity-30 cursor-not-allowed border-red-900/50 bg-black text-red-500/50"
+                                ? "opacity-30 cursor-not-allowed border-red-900/50 bg-input-background text-red-500/60"
                                 : selectedTime === time
                                 ? "border-yellow-400 bg-yellow-400 text-black"
-                                : "border-zinc-900 bg-black text-zinc-500 hover:border-zinc-700 hover:text-white"
+                                : "border-white/10 bg-input-background text-zinc-300 hover:border-white/20 hover:text-white"
                             }`}
                           >
                             {unavailable ? "BOOKED" : time}
                           </button>
                         )})
                       ) : (
-                        <div className="col-span-2 h-full flex items-center justify-center border border-dashed border-zinc-900 text-zinc-700 font-bold uppercase text-[10px] tracking-widest text-center px-12">
+                        <div className="col-span-2 h-full flex items-center justify-center border border-dashed border-white/10 text-zinc-500 font-bold uppercase text-[10px] tracking-widest text-center px-12">
                           Please select a date to view availability
                         </div>
                       )}
@@ -531,7 +531,7 @@ export function BookService() {
                     <button
                       onClick={handlePay}
                       disabled={isProcessing}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-yellow-400 hover:text-yellow-400 disabled:opacity-50"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-yellow-400 hover:text-yellow-400 disabled:opacity-50"
                     >
                       <CreditCard className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       {isProcessing ? "REDIRECTING..." : "PAY WITH CARD"}
@@ -539,7 +539,7 @@ export function BookService() {
                     {/* Venmo */}
                     <button
                       onClick={() => handleManualPay("venmo", "https://venmo.com/ytsautocare123")}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-blue-500 hover:text-blue-500"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-blue-500 hover:text-blue-500"
                     >
                       <ExternalLink className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       VENMO
@@ -547,7 +547,7 @@ export function BookService() {
                     {/* CashApp */}
                     <button
                       onClick={() => handleManualPay("cashapp", "https://cash.app/$YourTopShop123")}
-                      className="p-6 border border-zinc-900 bg-black flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-500 transition-all uppercase tracking-[0.2em] group hover:border-green-500 hover:text-green-500"
+                      className="p-6 border border-white/10 bg-input-background flex flex-col items-center justify-center gap-3 text-[10px] font-black text-zinc-300 transition-all uppercase tracking-[0.2em] group hover:border-green-500 hover:text-green-500"
                     >
                       <ExternalLink className="w-5 h-5 opacity-20 group-hover:opacity-100 transition-opacity" />
                       CASHAPP
@@ -581,39 +581,39 @@ export function BookService() {
                 <span className="w-10 h-10 bg-yellow-400 rounded-none flex items-center justify-center text-xs text-black font-black -skew-x-12">04</span>
                 REQUEST A CUSTOM QUOTE
               </h2>
-              <div className="p-12 border border-zinc-900 bg-zinc-950/50">
+              <div className="p-12 border border-white/10 bg-[#252a32]/50">
                 <form onSubmit={handleQuoteSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Full Name</label>
-                      <input required type="text" value={quoteData.name} onChange={(e) => setQuoteData({...quoteData, name: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="JOHN DOE" />
+                      <input required type="text" value={quoteData.name} onChange={(e) => setQuoteData({...quoteData, name: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="JOHN DOE" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Email Address</label>
-                      <input required type="email" value={quoteData.email} onChange={(e) => setQuoteData({...quoteData, email: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="JOHN@EXAMPLE.COM" />
+                      <input required type="email" value={quoteData.email} onChange={(e) => setQuoteData({...quoteData, email: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="JOHN@EXAMPLE.COM" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Phone Number</label>
-                      <input required type="tel" value={quoteData.phone} onChange={(e) => setQuoteData({...quoteData, phone: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="(401) 000-0000" />
+                      <input required type="tel" value={quoteData.phone} onChange={(e) => setQuoteData({...quoteData, phone: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none" placeholder="(401) 000-0000" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Vehicle Year</label>
-                      <input required type="text" value={quoteData.year} onChange={(e) => setQuoteData({...quoteData, year: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="2024" />
+                      <input required type="text" value={quoteData.year} onChange={(e) => setQuoteData({...quoteData, year: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="2024" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Make</label>
-                      <input required type="text" value={quoteData.make} onChange={(e) => setQuoteData({...quoteData, make: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="TESLA" />
+                      <input required type="text" value={quoteData.make} onChange={(e) => setQuoteData({...quoteData, make: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="TESLA" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Model</label>
-                      <input required type="text" value={quoteData.model} onChange={(e) => setQuoteData({...quoteData, model: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="MODEL S" />
+                      <input required type="text" value={quoteData.model} onChange={(e) => setQuoteData({...quoteData, model: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none uppercase" placeholder="MODEL S" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Project Specifics</label>
-                    <textarea value={quoteData.notes} onChange={(e) => setQuoteData({...quoteData, notes: e.target.value})} className="w-full bg-black border border-zinc-900 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none min-h-[120px] uppercase" placeholder="DESCRIBE YOUR REQUEST..." />
+                    <textarea value={quoteData.notes} onChange={(e) => setQuoteData({...quoteData, notes: e.target.value})} className="w-full bg-input-background border border-white/10 p-4 text-[11px] font-black tracking-widest focus:border-yellow-400 outline-none min-h-[120px] uppercase" placeholder="DESCRIBE YOUR REQUEST..." />
                   </div>
                   <Button type="submit" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-black py-8 rounded-none tracking-[0.3em] uppercase text-lg shadow-2xl">
                     Send Quote Request
@@ -631,7 +631,7 @@ export function BookService() {
               </div>
               <h3 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Quote Request Sent</h3>
               <p className="text-gray-500 font-bold tracking-widest uppercase text-xs mb-12">We will review your vehicle details and contact you within 24 business hours.</p>
-              <div className="max-w-md mx-auto p-10 bg-zinc-950 border border-zinc-900 text-left space-y-4">
+              <div className="max-w-md mx-auto p-10 bg-[#252a32] border border-white/10 text-left space-y-4">
                 <div className="flex justify-between text-[10px] font-black tracking-widest uppercase">
                   <span className="text-zinc-600">Client</span>
                   <span>{quoteData.name}</span>

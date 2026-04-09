@@ -17,7 +17,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="bg-black border-b border-gray-900 sticky top-0 z-50 py-4">
+    <nav className="camo-surface border-b border-white/10 sticky top-0 z-50 py-4">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex justify-between items-center">
           {/* Menu Links - Desktop (Two rows on left) */}
@@ -28,7 +28,7 @@ export function Navigation() {
                 to={link.to}
                 className={({ isActive }) =>
                   `transition-colors hover:text-yellow-400 ${
-                    isActive ? "text-yellow-400 underline underline-offset-8" : "text-white"
+                    isActive ? "text-yellow-400 underline underline-offset-8" : "text-foreground"
                   }`
                 }
               >
@@ -59,7 +59,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-foreground"
           >
             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
@@ -67,7 +67,7 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden mt-4 pb-6 space-y-4 border-t border-gray-900 pt-6">
+          <div className="lg:hidden mt-4 pb-6 space-y-4 border-t border-white/10 pt-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -75,7 +75,7 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   `block text-sm font-bold tracking-widest ${
-                    isActive ? "text-yellow-400" : "text-white"
+                    isActive ? "text-yellow-400" : "text-foreground"
                   }`
                 }
               >

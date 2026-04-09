@@ -95,9 +95,9 @@ export function Gallery() {
   };
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full text-foreground min-h-screen">
       {/* Hero Section */}
-      <section className="bg-black py-24 border-b border-gray-900">
+      <section className="camo-surface py-24 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -132,7 +132,7 @@ export function Gallery() {
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="px-8 py-3 bg-zinc-950 border border-gray-900 rounded-none data-[state=active]:bg-yellow-400 data-[state=active]:text-black font-black tracking-widest uppercase text-xs transition-all"
+                  className="px-8 py-3 bg-[#252a32] border border-white/10 rounded-none data-[state=active]:bg-yellow-400 data-[state=active]:text-black font-black tracking-widest uppercase text-xs transition-all"
                 >
                   {value}
                 </TabsTrigger>
@@ -145,7 +145,7 @@ export function Gallery() {
                   {filterItems(category).map((item, index) => (
                     <motion.div
                       key={index}
-                      className="group relative aspect-[4/3] overflow-hidden bg-zinc-950 cursor-pointer"
+                      className="group relative aspect-[4/3] overflow-hidden bg-[#252a32] cursor-pointer"
                       onClick={() => setSelectedImage(item.src)}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -156,7 +156,7 @@ export function Gallery() {
                         alt={item.title}
                         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                           <h3 className="text-xl font-bold uppercase tracking-tighter">{item.title}</h3>
                         </div>
@@ -171,7 +171,7 @@ export function Gallery() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-zinc-950 border-t border-gray-900 text-center">
+      <section className="py-32 bg-[#252a32] border-t border-white/10 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-black mb-12 uppercase tracking-tighter text-white">
             READY TO TRANSFORM<br /><span className="text-yellow-400">YOUR VEHICLE?</span>
@@ -185,7 +185,7 @@ export function Gallery() {
       {/* Image Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/98 z-50 flex items-center justify-center p-4 cursor-zoom-out"
+          className="fixed inset-0 bg-[#1e2228]/98 z-50 flex items-center justify-center p-4 cursor-zoom-out"
           onClick={() => setSelectedImage(null)}
         >
           <button
