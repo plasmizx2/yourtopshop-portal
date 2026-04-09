@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src={logoSrc}
                 alt="Your Top Shop"
-                className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(250,204,21,0.25)]"
+                className="h-24 w-auto object-contain"
               />
               <span className="text-yellow-400 font-bold tracking-widest uppercase">Premium Automotive Solutions</span>
             </div>

@@ -42,7 +42,7 @@ export function Navigation() {
             <img
               src={logoSrc}
               alt="Your Top Shop"
-              className="h-14 md:h-[72px] w-auto object-contain drop-shadow-[0_0_10px_rgba(250,204,21,0.35)]"
+              className="h-20 md:h-[100px] w-auto object-contain"
             />
           </Link>
 
