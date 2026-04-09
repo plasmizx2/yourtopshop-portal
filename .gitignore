@@ -1,4 +1,4 @@
-# Logs
+## Logs
 logs
 *.log
 npm-debug.log*
@@ -7,57 +7,48 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+## OS / editor
+.DS_Store
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Environment
+## Local secrets
 .env
 .env.*
 !.env.example
 
-# Local databases (optional: ignore if you use a cloud DB)
-# bookings.json
-# blocked.json
-# quotes.json
-# inquiries.json
-
-# Build
-dist
-dist-ssr
-.parcel-cache
-.turbo
-.next
-.nuxt
-.svelte-kit
-.output
-.docusaurus
-.vercel
-.netlify
-.cache
-.npm
+## Node / build output
+node_modules/
+dist/
+dist-ssr/
+build/
+.vite/
+*.local
+.parcel-cache/
+.turbo/
+.next/
+.nuxt/
+.svelte-kit/
+.output/
+.docusaurus/
+.vercel/
+.netlify/
+.cache/
+.npm/
 .eslintcache
 .stylelintcache
-node_modules
-bower_components
-jspm_packages
+bower_components/
+jspm_packages/
 
-# Images / Media
-# NOTE: we commit production images for deployment.
-# If you prefer not to store large assets in git, revert these ignores and
-# host images via a CDN/S3 instead.
-# public/images/*.png
-# public/images/*.jpg
-# public/favicon.png
+## App runtime data (local JSON persistence)
+tinting-company-website/data/*.json
+
+## Misc local assets in repo root
+*.zip
+image*.png
