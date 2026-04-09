@@ -41,7 +41,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
+:root.dark {
   /* Camo-gray base: visible gray, not black */
   --background: #1e2228;
   --foreground: #f3f4f6;
