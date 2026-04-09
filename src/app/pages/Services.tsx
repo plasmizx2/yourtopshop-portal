@@ -51,7 +51,7 @@ export function Services() {
           <Link 
             key={i} 
             to={service.to}
-            className="group relative aspect-[4/3] overflow-hidden border border-white/10"
+            className="group relative aspect-[4/3] overflow-hidden border border-white/10 bg-[#1e2228]"
           >
             <img 
               src={service.image} 

@@ -6,7 +6,7 @@ export function About() {
     <div className="w-full text-foreground">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0 bg-[#1e2228]">
           <img
             src="/images/hero.jpg"
             alt="Workshop"
