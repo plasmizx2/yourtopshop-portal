@@ -49,7 +49,7 @@ export function Home() {
             alt="Luxury vehicle"
             className="w-full h-full object-cover opacity-60 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121416] via-black/20 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-[#1e2228]/30 to-[#1e2228]/70" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 text-center">
@@ -88,7 +88,7 @@ export function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-zinc-950 border-y border-gray-900 py-12"
+        className="bg-[#252a32] border-y border-white/10 py-12"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -127,7 +127,7 @@ export function Home() {
               <p className="text-xl text-gray-400 font-light leading-relaxed mb-8">
                 At Your Top Shop, we've built our reputation on an uncompromising commitment to quality. Every vehicle that enters our shop is treated with surgical precision, utilizing the world's most advanced materials.
               </p>
-              <Button asChild variant="outline" className="border-gray-800 text-white rounded-none tracking-widest font-black uppercase py-8 px-10 hover:border-yellow-400 hover:text-yellow-400 group transition-all">
+              <Button asChild variant="outline" className="border-white/10 text-white rounded-none tracking-widest font-black uppercase py-8 px-10 hover:border-yellow-400 hover:text-yellow-400 group transition-all">
                 <Link to="/about" className="flex items-center gap-3">
                   Check Out Our Story <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -135,18 +135,18 @@ export function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="aspect-square bg-zinc-900 border border-gray-800 overflow-hidden group">
+                <div className="aspect-square bg-[#2a3038] border border-white/10 overflow-hidden group">
                    <img src="/images/real-optimized/gallery-shop-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="In-shop project" />
                 </div>
-                <div className="aspect-[3/4] bg-zinc-900 border border-gray-800 overflow-hidden group">
+                <div className="aspect-[3/4] bg-[#2a3038] border border-white/10 overflow-hidden group">
                    <img src="/images/real-optimized/gallery-wrap-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Wrap installation" />
                 </div>
               </div>
               <div className="space-y-4 pt-12">
-                <div className="aspect-[3/4] bg-zinc-900 border border-gray-800 overflow-hidden group">
+                <div className="aspect-[3/4] bg-[#2a3038] border border-white/10 overflow-hidden group">
                    <img src="/images/real-optimized/gallery-detail-02.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Finished detailing" />
                 </div>
-                <div className="aspect-square bg-zinc-900 border border-gray-800 overflow-hidden group">
+                <div className="aspect-square bg-[#2a3038] border border-white/10 overflow-hidden group">
                    <img src="/images/real-optimized/gallery-detail-01.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" alt="Detailing prep" />
                 </div>
               </div>
@@ -156,7 +156,7 @@ export function Home() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-32 px-6 bg-zinc-950">
+      <section className="py-32 px-6 bg-[#252a32]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
@@ -183,7 +183,7 @@ export function Home() {
                   alt={service.title}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-[#1e2228]/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-12 translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-3xl font-black mb-4 uppercase tracking-tighter">{service.title}</h3>
                   <p className="text-gray-400 mb-8 font-light text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity delay-200">
@@ -236,7 +236,7 @@ export function Home() {
             brandHeroImage,
             featuredServices[0].image,
           ].map((img, i) => (
-            <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden bg-zinc-950">
+            <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden bg-[#252a32]">
                <img src={img} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="Instagram" />
                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-yellow-400/20">
                   <Instagram className="w-8 h-8 text-white" />
@@ -252,7 +252,7 @@ export function Home() {
           <h2 className="text-5xl md:text-8xl font-black mb-12 uppercase tracking-tighter leading-tight">
             ELEVATE YOUR<br />STREET PRESENCE.
           </h2>
-          <Button asChild size="lg" className="bg-[#171a1e] text-white hover:bg-[#171a1e]/80 font-black px-16 py-10 text-2xl rounded-none tracking-widest uppercase transition-transform hover:scale-105 shadow-2xl border border-white/10">
+          <Button asChild size="lg" className="bg-[#252a32] text-white hover:bg-[#252a32]/80 font-black px-16 py-10 text-2xl rounded-none tracking-widest uppercase transition-transform hover:scale-105 shadow-2xl border border-white/10">
             <Link to="/book-service">Secure Your Spot</Link>
           </Button>
           <div className="mt-16 flex flex-wrap justify-center gap-12 text-sm font-black tracking-widest uppercase pointer-events-none opacity-80">

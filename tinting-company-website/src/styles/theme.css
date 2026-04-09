@@ -42,25 +42,26 @@
 }
 
 .dark {
-  /* Camo-gray base: cooler + more gray than pure black */
-  --background: #121416;
+  /* Camo-gray base: visible gray, not black */
+  --background: #1e2228;
   --foreground: #f3f4f6;
-  --card: #171a1e;
+  --card: #252a32;
   --card-foreground: #f3f4f6;
-  --popover: #171a1e;
+  --popover: #252a32;
   --popover-foreground: #f3f4f6;
   --primary: #f3f4f6;
-  --primary-foreground: #101214;
-  --secondary: #20242a;
+  --primary-foreground: #1a1e24;
+  --secondary: #2c323a;
   --secondary-foreground: #f3f4f6;
-  --muted: #1d2126;
+  --muted: #282d35;
   --muted-foreground: #a3aab4;
-  --accent: #222831;
+  --accent: #303840;
   --accent-foreground: #f3f4f6;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.08);
+  --input-background: #2a3038;
   --ring: rgba(250, 204, 21, 0.28);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
@@ -69,18 +70,18 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: #232830;
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: #2e343c;
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-border: #2e343c;
   --sidebar-ring: oklch(0.439 0 0);
 
   /* Extra camo tones used for subtle texture layers */
-  --camo-a: rgba(148, 163, 184, 0.16); /* slate (stronger) */
-  --camo-b: rgba(113, 122, 132, 0.18); /* steel (stronger) */
+  --camo-a: rgba(148, 163, 184, 0.20); /* slate */
+  --camo-b: rgba(113, 122, 132, 0.22); /* steel */
 }
 
 @theme inline {
@@ -148,7 +149,7 @@
 
   /* Slightly lifted surface for nav/footer/sections */
   .camo-surface {
-    background-color: rgba(23, 26, 30, 0.9);
+    background-color: rgba(37, 42, 50, 0.92);
     backdrop-filter: blur(10px);
   }
 

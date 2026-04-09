@@ -52,7 +52,7 @@ export function ServiceDetail() {
             alt={service.title}
             className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121416] via-transparent to-[#121416]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-transparent to-[#1e2228]/70" />
         </div>
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 text-center">
@@ -90,17 +90,17 @@ export function ServiceDetail() {
             </div>
 
             <div className="flex gap-4 pt-4">
-              <Button variant="outline" className="border-gray-800 text-white rounded-none flex gap-2">
+              <Button variant="outline" className="border-white/10 text-white rounded-none flex gap-2">
                 <Share2 className="w-4 h-4 text-yellow-400" /> Share Project
               </Button>
-              <Button variant="outline" className="border-gray-800 text-white rounded-none flex gap-2">
+              <Button variant="outline" className="border-white/10 text-white rounded-none flex gap-2">
                 <Info className="w-4 h-4 text-yellow-400" /> Quality Specs
               </Button>
             </div>
           </div>
 
           {/* Right Column: Features & CTA */}
-          <div className="space-y-12 bg-zinc-950 p-12 border border-gray-900">
+          <div className="space-y-12 bg-[#252a32] p-12 border border-white/10">
             <h3 className="text-2xl font-bold tracking-widest uppercase flex items-center gap-3">
               <ChevronRight className="text-yellow-400" /> What's Included
             </h3>
@@ -113,7 +113,7 @@ export function ServiceDetail() {
               ))}
             </ul>
 
-            <div className="pt-12 border-t border-gray-900 mt-12">
+            <div className="pt-12 border-t border-white/10 mt-12">
               <p className="text-sm text-gray-500 uppercase tracking-widest mb-6">Experience the transformation</p>
               <Button asChild className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-black py-8 text-lg rounded-none tracking-widest uppercase">
                 <Link to="/book-service">Secure Your Appointment</Link>
@@ -124,16 +124,16 @@ export function ServiceDetail() {
       </section>
 
       {/* Related Section */}
-      <section className="py-24 border-t border-gray-900">
+      <section className="py-24 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-black mb-12 uppercase tracking-tighter">Explore More Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {Object.keys(serviceData).filter(key => key !== id).slice(0, 4).map((key) => {
               const s = serviceData[key];
               return (
-                <Link key={key} to={`/services/${key}`} className="group relative aspect-[3/4] overflow-hidden bg-zinc-950">
+                <Link key={key} to={`/services/${key}`} className="group relative aspect-[3/4] overflow-hidden bg-[#252a32]">
                   <img src={s.image} alt={s.title} className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-left">
                     <h4 className="text-xl font-bold uppercase tracking-tighter leading-tight">{s.title}<br/>{s.subtitle}</h4>
                     <ChevronRight className="text-yellow-400 w-6 h-6 mt-4 group-hover:translate-x-2 transition-transform" />

@@ -243,7 +243,7 @@ export function Admin() {
     <div className="w-full min-h-screen text-foreground pt-8 pb-24 camo-page">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mb-12 border-b border-zinc-900 pb-8">
+        <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mb-12 border-b border-white/10 pb-8">
           <div>
             <h1 className="text-3xl font-black uppercase tracking-tighter italic">
               Admin <span className="text-yellow-400">Portal</span>
@@ -274,23 +274,23 @@ export function Admin() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <div className="p-6 border border-zinc-900 bg-zinc-950">
+          <div className="p-6 border border-white/10 bg-[#252a32]">
             <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2">Total Bookings</p>
             <p className="text-3xl font-black text-yellow-400">{bookings.length}</p>
           </div>
-          <div className="p-6 border border-zinc-900 bg-zinc-950">
+          <div className="p-6 border border-white/10 bg-[#252a32]">
             <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2">Paid (Stripe)</p>
             <p className="text-3xl font-black text-green-400">{paidBookings.length}</p>
           </div>
-          <div className="p-6 border border-zinc-900 bg-zinc-950">
+          <div className="p-6 border border-white/10 bg-[#252a32]">
             <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2">Pending (Manual)</p>
             <p className="text-3xl font-black text-blue-400">{pendingBookings.length}</p>
           </div>
         </div>
 
         {/* Schedule Management */}
-        <div className="border border-zinc-900 mb-12">
-          <div className="p-6 border-b border-zinc-900 bg-zinc-950/50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border border-white/10 mb-12">
+          <div className="p-6 border-b border-white/10 bg-[#252a32]/50 flex flex-col md:flex-row justify-between items-center gap-4">
             <h2 className="text-sm font-black uppercase tracking-widest">Schedule Management</h2>
             <div className="flex gap-2 items-center">
               <input type="date" value={blockDate} onChange={e => setBlockDate(e.target.value)} className="bg-input-background border border-white/10 p-2 text-xs w-36 text-zinc-300 focus:text-white" style={{colorScheme: "dark"}} />
@@ -303,32 +303,32 @@ export function Admin() {
               <Button onClick={() => addBlock(true)} disabled={!blockDate} className="bg-red-500 text-white px-4 py-2 text-[10px] rounded-none uppercase font-black">Block Day</Button>
             </div>
           </div>
-          <div className="p-6 divide-y divide-zinc-900">
+          <div className="p-6 divide-y divide-white/10">
             {blocks.dates.length === 0 && blocks.times.length === 0 && <p className="text-xs text-zinc-600 uppercase tracking-widest text-center py-4">No schedule blocks active</p>}
             {blocks.dates.map(d => (
               <div key={d} className="py-2 flex justify-between items-center text-xs">
                 <span className="text-red-400 uppercase tracking-widest font-bold">Entire Day Blocked: {d}</span>
-                <button onClick={() => removeBlock(d)} className="text-zinc-500 hover:text-white uppercase text-[9px] tracking-widest border border-zinc-900 px-3 py-1">Remove</button>
+                <button onClick={() => removeBlock(d)} className="text-zinc-500 hover:text-white uppercase text-[9px] tracking-widest border border-white/10 px-3 py-1">Remove</button>
               </div>
             ))}
             {blocks.times.map(t => (
               <div key={t.date + t.time} className="py-2 flex justify-between items-center text-xs">
                 <span className="text-yellow-400 uppercase tracking-widest font-bold">Blocked Time: {t.date} at {t.time}</span>
-                <button onClick={() => removeBlock(t.date, t.time)} className="text-zinc-500 hover:text-white uppercase text-[9px] tracking-widest border border-zinc-900 px-3 py-1">Remove</button>
+                <button onClick={() => removeBlock(t.date, t.time)} className="text-zinc-500 hover:text-white uppercase text-[9px] tracking-widest border border-white/10 px-3 py-1">Remove</button>
               </div>
             ))}
           </div>
         </div>
 
         {/* Quote Requests */}
-        <div className="border border-zinc-900 mb-12">
-          <div className="p-6 border-b border-zinc-900 bg-zinc-950/50">
+        <div className="border border-white/10 mb-12">
+          <div className="p-6 border-b border-white/10 bg-[#252a32]/50">
             <h2 className="text-sm font-black uppercase tracking-widest flex items-center gap-2"><Mail className="w-4 h-4 text-yellow-400"/> Quote Requests</h2>
           </div>
           {quotes.filter(q => q.status === "pending").length === 0 ? (
             <div className="p-10 text-center text-zinc-600 font-bold uppercase tracking-widest text-xs">No pending quotes</div>
           ) : (
-            <div className="divide-y divide-zinc-900 focus-within:bg-zinc-900">
+            <div className="divide-y divide-white/10">
               {quotes.filter(q => q.status === "pending").map(quote => (
                 <div key={quote.id} className="p-6">
                   <div className="flex flex-col md:flex-row justify-between gap-6">
@@ -349,8 +349,8 @@ export function Admin() {
         </div>
 
         {/* Bookings Table */}
-        <div className="border border-zinc-900">
-          <div className="p-6 border-b border-zinc-900 bg-zinc-950/50">
+        <div className="border border-white/10">
+          <div className="p-6 border-b border-white/10 bg-[#252a32]/50">
             <h2 className="text-sm font-black uppercase tracking-widest">All Bookings</h2>
           </div>
 
@@ -361,13 +361,13 @@ export function Admin() {
               <p className="text-zinc-800 text-[10px] mt-2">Bookings will appear here once customers pay.</p>
             </div>
           ) : (
-            <div className="divide-y divide-zinc-900">
+            <div className="divide-y divide-white/10">
               {bookings.map((booking) => (
                 <motion.div
                   key={booking.id}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="p-6 hover:bg-zinc-950/80 transition-all border-b border-zinc-900 last:border-b-0 group"
+                  className="p-6 hover:bg-[#252a32]/80 transition-all border-b border-white/10 last:border-b-0 group"
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex-1 space-y-3">
@@ -386,7 +386,7 @@ export function Admin() {
                       <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
                         <span className="flex items-center gap-2 text-zinc-400"><Calendar className="w-3.5 h-3.5 text-yellow-500" />{booking.date}</span>
                         <span className="flex items-center gap-2 text-zinc-400"><Clock className="w-3.5 h-3.5 text-yellow-500" />{booking.time}</span>
-                        <span className="flex items-center gap-2 text-white bg-zinc-900 px-2 py-0.5"><DollarSign className="w-3.5 h-3.5 text-yellow-500" />{booking.price}</span>
+                        <span className="flex items-center gap-2 text-white bg-[#2a3038] px-2 py-0.5"><DollarSign className="w-3.5 h-3.5 text-yellow-500" />{booking.price}</span>
                         <span className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-zinc-600" />{booking.customerEmail}</span>
                       </div>
                     </div>
@@ -417,13 +417,13 @@ export function Admin() {
             </h2>
             
             {inquiries.length === 0 ? (
-               <div className="p-12 border border-dashed border-zinc-900 text-center">
+               <div className="p-12 border border-dashed border-white/10 text-center">
                   <p className="text-[10px] text-zinc-700 font-bold uppercase tracking-widest">No inquiries yet</p>
                </div>
             ) : (
                <div className="grid grid-cols-1 gap-4">
                   {inquiries.map((inq) => (
-                     <motion.div key={inq.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="p-6 border border-zinc-900 bg-zinc-950 group hover:border-blue-500/30 transition-all">
+                     <motion.div key={inq.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="p-6 border border-white/10 bg-[#252a32] group hover:border-blue-500/30 transition-all">
                         <div className="flex justify-between items-start">
                            <div>
                               <div className="flex items-center gap-3 mb-2">
@@ -431,7 +431,7 @@ export function Admin() {
                                  <span className="text-[8px] bg-blue-400/10 text-blue-400 px-2 py-0.5 font-bold uppercase tracking-widest border border-blue-400/20">{inq.service}</span>
                               </div>
                               <p className="text-[10px] text-zinc-500 font-medium uppercase tracking-[0.2em] mb-4">{inq.email} • {inq.phone}</p>
-                              <p className="text-xs text-zinc-300 leading-relaxed max-w-2xl bg-[#0f1113]/50 p-4 border-l-2 border-blue-500 uppercase font-bold tracking-tight">{inq.message}</p>
+                              <p className="text-xs text-zinc-300 leading-relaxed max-w-2xl bg-[#2a3038]/50 p-4 border-l-2 border-blue-500 uppercase font-bold tracking-tight">{inq.message}</p>
                            </div>
                            <div className="text-right">
                               <p className="text-[9px] text-zinc-700 font-black uppercase tracking-widest">{format(new Date(inq.createdAt), 'MMM do, HH:mm')}</p>

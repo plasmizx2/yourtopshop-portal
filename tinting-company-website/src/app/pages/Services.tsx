@@ -51,14 +51,14 @@ export function Services() {
           <Link 
             key={i} 
             to={service.to}
-            className="group relative aspect-[4/3] overflow-hidden border border-black"
+            className="group relative aspect-[4/3] overflow-hidden border border-white/10"
           >
             <img 
               src={service.image} 
               alt={service.title} 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1e2228] via-transparent to-transparent opacity-80" />
             <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-tight drop-shadow-2xl">
                 {service.title}
@@ -91,7 +91,7 @@ export function Services() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 className="flex flex-col h-full"
               >
-                <div className="aspect-[4/3] bg-zinc-900 border border-gray-900 overflow-hidden mb-8">
+                <div className="aspect-[4/3] bg-[#2a3038] border border-white/10 overflow-hidden mb-8">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-lg font-bold mb-4 tracking-widest text-white border-b-2 border-yellow-400 inline-block self-start pb-1">
@@ -115,7 +115,7 @@ export function Services() {
       {/* CTA Bottom */}
       <section className="relative camo-surface py-32 border-t border-white/10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#121416] via-[#121416] to-[#121416]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e2228] via-[#1e2228] to-[#1e2228]/95" />
           <div className="absolute -top-24 left-1/2 h-64 w-[900px] -translate-x-1/2 bg-yellow-400/5 blur-[120px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center">

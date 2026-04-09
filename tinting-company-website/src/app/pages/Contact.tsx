@@ -78,7 +78,7 @@ export function Contact() {
                 <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Direct Channels</h2>
                 <div className="space-y-8">
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <MapPin className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -91,7 +91,7 @@ export function Contact() {
 
                   {/* Map + Directions */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                    <div className="aspect-square bg-zinc-950 border border-gray-900 overflow-hidden">
+                    <div className="aspect-square bg-[#252a32] border border-white/10 overflow-hidden">
                       <iframe
                         src={mapEmbedUrl}
                         width="100%"
@@ -104,7 +104,7 @@ export function Contact() {
                         className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
                       />
                     </div>
-                    <div className="bg-zinc-950 border border-gray-900 p-6 flex flex-col justify-between">
+                    <div className="bg-[#252a32] border border-white/10 p-6 flex flex-col justify-between">
                       <div>
                         <h3 className="font-bold uppercase tracking-widest text-sm mb-2 text-gray-400">Directions</h3>
                         <p className="text-sm text-gray-400 font-light leading-relaxed">
@@ -120,7 +120,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Phone className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -132,7 +132,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Mail className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -144,7 +144,7 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-14 h-14 bg-zinc-950 border border-gray-900 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
+                    <div className="w-14 h-14 bg-[#252a32] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-yellow-400 transition-colors">
                       <Instagram className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
@@ -171,7 +171,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="p-8 bg-zinc-950 border border-gray-900">
+              <div className="p-8 bg-[#252a32] border border-white/10">
                 <Calendar className="w-8 h-8 text-yellow-400 mb-4" />
                 <h3 className="text-xl font-bold uppercase mb-2">Preferred Method</h3>
                 <p className="text-gray-400 font-light text-sm mb-6 leading-relaxed">
@@ -187,7 +187,7 @@ export function Contact() {
 
             {/* Right: Contact Form */}
             <div className="lg:col-span-7">
-              <div className="bg-zinc-950 border border-gray-900 p-10 md:p-12">
+              <div className="bg-[#252a32] border border-white/10 p-10 md:p-12">
                 <div className="flex items-center gap-4 mb-8">
                   <MessageSquare className="w-8 h-8 text-yellow-400" />
                   <h2 className="text-4xl font-black uppercase tracking-tighter">Request a Quote</h2>
@@ -235,7 +235,7 @@ export function Contact() {
                         <SelectTrigger id="service" className="bg-input-background border-white/10 rounded-none h-14">
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
-                        <SelectContent className="bg-zinc-950 border-gray-900 text-white rounded-none">
+                        <SelectContent className="bg-[#252a32] border-white/10 text-white rounded-none">
                           <SelectItem value="window-tint">Window Tinting</SelectItem>
                           <SelectItem value="detailing">Auto Detailing</SelectItem>
                           <SelectItem value="vinyl">Vinyl Wrap</SelectItem>

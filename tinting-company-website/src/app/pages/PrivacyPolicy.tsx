@@ -47,7 +47,7 @@ export function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-widest">05. Contact</h2>
             <p>For any privacy-related inquiries:</p>
-            <div className="mt-4 p-8 bg-zinc-950 border border-zinc-900 rounded-none">
+            <div className="mt-4 p-8 bg-[#252a32] border border-white/10 rounded-none">
               <p className="text-white font-black uppercase">Your Top Shop</p>
               <p>99 Fletcher Ave</p>
               <p>Cranston, RI 02920</p>
@@ -55,7 +55,7 @@ export function PrivacyPolicy() {
             </div>
           </section>
 
-          <p className="text-[10px] uppercase font-black tracking-[0.2em] pt-12 border-t border-zinc-900">
+          <p className="text-[10px] uppercase font-black tracking-[0.2em] pt-12 border-t border-white/10">
             Version 1.1 — Updated April 2024
           </p>
         </div>

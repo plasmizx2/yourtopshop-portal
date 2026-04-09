@@ -245,7 +245,7 @@ export function BookService() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="p-12 border border-yellow-400/20 bg-zinc-950 text-center relative overflow-hidden mt-16"
+            className="p-12 border border-yellow-400/20 bg-[#252a32] text-center relative overflow-hidden mt-16"
           >
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <LucideCalendar className="w-32 h-32" />
@@ -356,7 +356,7 @@ export function BookService() {
                   className={`p-6 border rounded-none text-left transition-all relative overflow-hidden group ${
                     selectedService === service.id
                       ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.05)]"
-                      : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                      : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                   }`}
                 >
                   <div className={`absolute top-0 left-0 w-1 h-full bg-yellow-400 transition-transform duration-300 ${selectedService === service.id ? "scale-y-100" : "scale-y-0"}`} />
@@ -384,7 +384,7 @@ export function BookService() {
                     className={`p-8 border rounded-none text-left transition-all relative group ${
                       selectedSubCategory === sub.id
                         ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.05)]"
-                        : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                        : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                     }`}
                   >
                     <h3 className="font-black mb-2 tracking-widest leading-none text-[11px] uppercase group-hover:text-yellow-400">{sub.title}</h3>
@@ -412,13 +412,13 @@ export function BookService() {
                     className={`p-6 border rounded-none text-left transition-all relative group ${
                       selectedConfig === config.id
                         ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.1)]"
-                        : "border-zinc-900 bg-zinc-950 hover:border-zinc-700"
+                        : "border-white/10 bg-[#252a32] hover:border-zinc-700"
                     }`}
                   >
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-black tracking-widest leading-none text-[11px] uppercase group-hover:text-yellow-400 transition-colors w-2/3">{config.title}</h3>
                       <div className="flex flex-col items-end gap-1">
-                        <div className="flex items-center gap-1.5 px-2 py-1 bg-zinc-900 border border-zinc-800">
+                        <div className="flex items-center gap-1.5 px-2 py-1 bg-[#2a3038] border border-white/10">
                           <Clock className="w-3 h-3 text-yellow-400" />
                           <span className="text-[9px] text-zinc-100 font-black tracking-tight">{config.time}</span>
                         </div>
@@ -461,7 +461,7 @@ export function BookService() {
               </div>
 
               {/* Calendar + Time Picker */}
-              <div className="p-6 md:p-12 border border-zinc-900 bg-zinc-950/20 rounded-none overflow-hidden">
+              <div className="p-6 md:p-12 border border-white/10 bg-[#252a32]/20 rounded-none overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                   {/* Left: Calendar */}
                   <div className="space-y-6">
@@ -476,7 +476,7 @@ export function BookService() {
                       disabled={(date) => isSunday(date) || date < startOfToday() || availability.blockedDays.includes(format(date, 'MMMM do, yyyy'))}
                       className="bg-input-background border border-white/10 mx-auto"
                     />
-                    <div className="p-4 bg-zinc-900/50 border border-zinc-900">
+                    <div className="p-4 bg-[#2a3038]/50 border border-white/10">
                       <p className="text-[9px] font-bold text-zinc-500 uppercase flex justify-between">
                         <span>Business Hours</span>
                         <span>{selectedDate && isSaturday(selectedDate) ? "7AM - 12PM" : "10AM - 5PM"}</span>
@@ -511,7 +511,7 @@ export function BookService() {
                           </button>
                         )})
                       ) : (
-                        <div className="col-span-2 h-full flex items-center justify-center border border-dashed border-zinc-900 text-zinc-700 font-bold uppercase text-[10px] tracking-widest text-center px-12">
+                        <div className="col-span-2 h-full flex items-center justify-center border border-dashed border-white/10 text-zinc-500 font-bold uppercase text-[10px] tracking-widest text-center px-12">
                           Please select a date to view availability
                         </div>
                       )}
@@ -581,7 +581,7 @@ export function BookService() {
                 <span className="w-10 h-10 bg-yellow-400 rounded-none flex items-center justify-center text-xs text-black font-black -skew-x-12">04</span>
                 REQUEST A CUSTOM QUOTE
               </h2>
-              <div className="p-12 border border-zinc-900 bg-zinc-950/50">
+              <div className="p-12 border border-white/10 bg-[#252a32]/50">
                 <form onSubmit={handleQuoteSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">
@@ -631,7 +631,7 @@ export function BookService() {
               </div>
               <h3 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Quote Request Sent</h3>
               <p className="text-gray-500 font-bold tracking-widest uppercase text-xs mb-12">We will review your vehicle details and contact you within 24 business hours.</p>
-              <div className="max-w-md mx-auto p-10 bg-zinc-950 border border-zinc-900 text-left space-y-4">
+              <div className="max-w-md mx-auto p-10 bg-[#252a32] border border-white/10 text-left space-y-4">
                 <div className="flex justify-between text-[10px] font-black tracking-widest uppercase">
                   <span className="text-zinc-600">Client</span>
                   <span>{quoteData.name}</span>
