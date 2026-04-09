@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://yourtopshop-portal.onrender.com/sitemap.xml
