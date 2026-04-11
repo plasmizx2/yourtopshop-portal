@@ -80,8 +80,9 @@
   --sidebar-ring: oklch(0.439 0 0);
 
   /* Extra camo tones used for subtle texture layers */
-  --camo-a: rgba(148, 163, 184, 0.20); /* slate */
-  --camo-b: rgba(113, 122, 132, 0.22); /* steel */
+  --camo-intensity: 0.12;
+  --camo-a: rgba(148, 163, 184, var(--camo-intensity)); /* slate */
+  --camo-b: rgba(113, 122, 132, calc(var(--camo-intensity) * 1.1)); /* steel */
 }
 
 @theme inline {
@@ -134,16 +135,15 @@
     @apply bg-background text-foreground;
   }
 
-  /* App-wide camo gray background texture (very subtle) */
+  /* App-wide camo gray background texture (Refined Stealth Version) */
   .camo-page {
     background-color: var(--background);
     background-image:
-      radial-gradient(1200px 600px at 20% 10%, var(--camo-a), transparent 55%),
-      radial-gradient(900px 700px at 80% 25%, var(--camo-b), transparent 60%),
-      radial-gradient(700px 500px at 35% 85%, var(--camo-b), transparent 58%),
-      radial-gradient(600px 450px at 75% 80%, var(--camo-a), transparent 60%),
-      repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 18px, rgba(0,0,0,0.08) 18px 36px),
-      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.35));
+      radial-gradient(1300px 700px at 20% 10%, var(--camo-a), transparent 60%),
+      radial-gradient(1000px 800px at 80% 25%, var(--camo-b), transparent 65%),
+      radial-gradient(800px 600px at 35% 85%, var(--camo-b), transparent 62%),
+      radial-gradient(700px 550px at 75% 80%, var(--camo-a), transparent 65%),
+      linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.30));
     background-attachment: fixed;
   }
 
