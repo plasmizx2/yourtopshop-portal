@@ -245,7 +245,7 @@ export function BookService() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="p-12 border border-yellow-400/20 bg-[#252a32] text-center relative overflow-hidden mt-16"
+            className="p-12 border border-yellow-400/20 camo-surface text-center relative overflow-hidden mt-16"
           >
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <LucideCalendar className="w-32 h-32" />
@@ -356,8 +356,8 @@ export function BookService() {
                   className={`p-6 border rounded-none text-left transition-all relative overflow-hidden group ${
                     selectedService === service.id
                       ? "border-yellow-400 bg-yellow-400/5 shadow-[0_0_30px_rgba(250,204,21,0.05)]"
-                      : "border-white/10 bg-[#252a32] hover:border-zinc-700"
-                  }`}
+                      : "border-white/10 camo-surface hover:border-zinc-700"
+                  } transition-all`}
                 >
                   <div className={`absolute top-0 left-0 w-1 h-full bg-yellow-400 transition-transform duration-300 ${selectedService === service.id ? "scale-y-100" : "scale-y-0"}`} />
                   <h3 className="font-black mb-2 tracking-widest leading-none text-[10px] uppercase group-hover:text-yellow-400 transition-colors">{service.title}</h3>
@@ -461,7 +461,7 @@ export function BookService() {
               </div>
 
               {/* Calendar + Time Picker */}
-              <div className="p-6 md:p-12 border border-white/10 bg-[#252a32]/20 rounded-none overflow-hidden">
+              <div className="p-6 md:p-12 border border-white/10 camo-surface rounded-none overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                   {/* Left: Calendar */}
                   <div className="space-y-6">
@@ -581,7 +581,7 @@ export function BookService() {
                 <span className="w-10 h-10 bg-yellow-400 rounded-none flex items-center justify-center text-xs text-black font-black -skew-x-12">04</span>
                 REQUEST A CUSTOM QUOTE
               </h2>
-              <div className="p-12 border border-white/10 bg-[#252a32]/50">
+              <div className="p-12 border border-white/10 camo-surface">
                 <form onSubmit={handleQuoteSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="space-y-2">

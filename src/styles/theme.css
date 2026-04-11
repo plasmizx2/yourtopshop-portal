@@ -147,10 +147,10 @@
     background-attachment: fixed;
   }
 
-  /* Slightly lifted surface for nav/footer/sections */
+  /* Slightly lifted surface for nav/footer/sections (Glassmorphism) */
   .camo-surface {
-    background-color: rgba(37, 42, 50, 0.92);
-    backdrop-filter: blur(10px);
+    background-color: rgba(37, 42, 50, 0.40);
+    backdrop-filter: blur(12px);
   }
 
   /**

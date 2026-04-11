@@ -88,7 +88,7 @@ export function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-[#252a32] border-y border-white/10 py-12"
+        className="camo-surface border-y border-white/10 py-12"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -156,7 +156,7 @@ export function Home() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-32 px-6 bg-[#252a32]">
+      <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
@@ -236,7 +236,7 @@ export function Home() {
             brandHeroImage,
             featuredServices[0].image,
           ].map((img, i) => (
-            <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden bg-[#252a32]">
+            <a key={i} href="https://www.instagram.com/yourtopshop_/" target="_blank" rel="noopener noreferrer" className="aspect-square relative group overflow-hidden camo-surface">
                <img src={img} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="Instagram" />
                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-yellow-400/20">
                   <Instagram className="w-8 h-8 text-white" />

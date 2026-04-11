@@ -51,7 +51,7 @@ export function Services() {
           <Link 
             key={i} 
             to={service.to}
-            className="group relative aspect-[4/3] overflow-hidden border border-white/10 bg-[#1e2228]"
+            className="group relative aspect-[4/3] overflow-hidden border border-white/10"
           >
             <img 
               src={service.image} 
@@ -91,7 +91,7 @@ export function Services() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 className="flex flex-col h-full"
               >
-                <div className="aspect-[4/3] bg-[#2a3038] border border-white/10 overflow-hidden mb-8">
+                <div className="aspect-[4/3] camo-surface border border-white/10 overflow-hidden mb-8">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-lg font-bold mb-4 tracking-widest text-white border-b-2 border-yellow-400 inline-block self-start pb-1">

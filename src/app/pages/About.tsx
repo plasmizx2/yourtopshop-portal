@@ -67,7 +67,7 @@ export function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-[#252a32]">
+      <section className="py-24 camo-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-black tracking-widest uppercase mb-4">Our Core Values</h2>
@@ -80,7 +80,7 @@ export function About() {
               { icon: Users, title: "COMMUNITY", desc: "Building lasting relationships with our local car culture." },
               { icon: Star, title: "MASTERY", desc: "Continuous training and refinement in all application methods." },
             ].map((item, i) => (
-              <div key={i} className="p-8 bg-[#2a3038]/50 border border-white/10 hover:border-yellow-400/50 transition-colors">
+              <div key={i} className="p-8 camo-surface border border-white/10 hover:border-yellow-400/50 transition-colors">
                 <item.icon className="w-10 h-10 text-yellow-400 mb-6" />
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
