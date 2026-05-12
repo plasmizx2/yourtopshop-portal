@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: Contact },
       { path: "about", Component: About },
       { path: "book-service", Component: BookService },
-      { path: "private-policy", Component: PrivacyPolicy },
+      { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "admin", Component: Admin },
       { path: "*", Component: NotFound },
     ],

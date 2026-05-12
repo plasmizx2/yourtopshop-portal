@@ -13,7 +13,7 @@ export function Navigation() {
     { to: "/services", label: "OUR SERVICES" },
     { to: "/about", label: "ABOUT" },
     { to: "/contact", label: "CONTACT" },
-    { to: "/private-policy", label: "PRIVATE POLICY" },
+    { to: "/privacy-policy", label: "PRIVACY POLICY" },
   ];
 
   return (
