@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   const logoSrc = "/images/brand/logo-new.png";
