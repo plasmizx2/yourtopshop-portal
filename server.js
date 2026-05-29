@@ -108,16 +108,28 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), (req, res) =
 
   let event;
 
-  if (endpointSecret && sig) {
+  if (!endpointSecret) {
+    if (!IS_DEV) {
+      console.error('Stripe webhook secret is not configured; refusing unsigned webhook');
+      return res.status(500).send('Stripe webhook secret is not configured');
+    }
+
+    try {
+      event = JSON.parse(req.body.toString());
+    } catch {
+      return res.status(400).send('Invalid webhook payload');
+    }
+  } else {
+    if (!sig) {
+      return res.status(400).send('Missing Stripe signature');
+    }
+
     try {
       event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
     } catch (err) {
       console.log(`⚠️ Webhook signature verification failed.`, err.message);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-  } else {
-    // No webhook secret configured — parse the body directly (dev mode)
-    event = JSON.parse(req.body.toString());
   }
 
   // Handle checkout.session.completed
